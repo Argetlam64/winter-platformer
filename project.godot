@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="Winter_Platformer"
-run/main_scene="uid://b8sjxgewxnre0"
+run/main_scene="uid://84jplcv3gk2a"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
 
 [input]
 
