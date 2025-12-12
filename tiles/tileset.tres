@@ -299,6 +299,7 @@ texture = ExtResource("1_ej02t")
 7:10/0 = 0
 8:10/0 = 0
 9:10/0 = 0
+9:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 10:10/0 = 0
 11:10/0 = 0
 12:10/0 = 0
@@ -1963,6 +1964,7 @@ texture = ExtResource("2_14fb3")
 23:39/0 = 0
 
 [resource]
+physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "sprint_ground_spring"
 terrain_set_0/terrain_0/color = Color(0.6625104, 0.125887, 0.43046698, 1)

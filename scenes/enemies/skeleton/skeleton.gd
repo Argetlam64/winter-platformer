@@ -9,7 +9,6 @@ var original_pos = position
 
 func _physics_process(delta: float) -> void:
 	velocity = Vector2(0, velocity.y)
-	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	
@@ -17,7 +16,6 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 		return
 
-	
 	if direction.x:
 		$AnimatedSprite2D.flip_h = direction.x < 0
 		

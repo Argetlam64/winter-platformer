@@ -283,7 +283,8 @@ frame = 7
 frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 10)
+position = Vector2(0, 11)
+scale = Vector2(1, 0.8)
 shape = SubResource("CapsuleShape2D_ioxgp")
 
 [node name="Camera2D" type="Camera2D" parent="."]
