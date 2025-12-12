@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b8sjxgewxnre0"]
+[gd_scene load_steps=5 format=3 uid="uid://b8sjxgewxnre0"]
 
 [ext_resource type="Texture2D" uid="uid://qw2sl6eyebu8" path="res://icon.svg" id="1_sul5r"]
 [ext_resource type="PackedScene" uid="uid://cw5l3h3ncruh1" path="res://scenes/player/player.tscn" id="2_7h61r"]
+[ext_resource type="PackedScene" uid="uid://d1unwglon012" path="res://scenes/enemies/skeleton/skeleton.tscn" id="3_0sr1o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7h61r"]
 size = Vector2(127.53322, 130)
@@ -17,8 +18,12 @@ shape = SubResource("RectangleShape2D_7h61r")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(291.99997, 140)
+rotation = 0.002188712
 scale = Vector2(9.171875, 1)
 texture = ExtResource("1_sul5r")
 
 [node name="Player" parent="StaticBody2D" instance=ExtResource("2_7h61r")]
 position = Vector2(37, 43)
+
+[node name="Skeleton" parent="StaticBody2D" instance=ExtResource("3_0sr1o")]
+position = Vector2(150, 31)

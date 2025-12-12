@@ -7,20 +7,22 @@ var is_attacking := false
 
 func _physics_process(delta: float) -> void:
 	
+	#can't cancel attacking
+	if is_attacking:
+		return
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
-	if is_attacking:
-		return
 		
 	var direction := Input.get_axis("left", "right")
 	if direction:
 		velocity.x = direction * SPEED
+		$SpriteAnimation.flip_h = velocity.x < 0
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
-	$SpriteAnimation.flip_h = velocity.x < 0
+	
 		# Handle jump.
 	if is_on_floor():
 		if Input.is_action_just_pressed("jump") :
@@ -41,6 +43,6 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
+#check if the animation is finished (can't cancel attack)
 func _on_sprite_animation_animation_finished() -> void:
-	print("finished animation")
 	is_attacking = false
