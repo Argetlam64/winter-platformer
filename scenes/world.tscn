@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=4 uid="uid://84jplcv3gk2a"]
+[gd_scene load_steps=9 format=4 uid="uid://cdmknbiwvgt"]
 
 [ext_resource type="TileSet" uid="uid://bhtybqqmxypek" path="res://tiles/tileset.tres" id="1_f3sb7"]
-[ext_resource type="PackedScene" uid="uid://iussl4g0k4fv" path="res://scenes/entities/bomb_goblin.tscn" id="2_rwgxs"]
+[ext_resource type="PackedScene" uid="uid://d1unwglon012" path="res://scenes/enemies/skeleton/skeleton.tscn" id="2_4wyf3"]
+[ext_resource type="PackedScene" uid="uid://cw5l3h3ncruh1" path="res://scenes/player/player.tscn" id="3_k0juu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_71j4m"]
 size = Vector2(363, 222)
@@ -54,6 +55,11 @@ shape = SubResource("RectangleShape2D_rwgxs")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/StaticBody2D"]
 shape = SubResource("RectangleShape2D_nnsk1")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_rwgxs")]
-position = Vector2(206, 340)
-scale = Vector2(2, 2)
+[node name="Skeleton" parent="." instance=ExtResource("2_4wyf3")]
+position = Vector2(893, 440)
+
+[node name="Skeleton2" parent="." instance=ExtResource("2_4wyf3")]
+position = Vector2(662, 484)
+
+[node name="Player" parent="." instance=ExtResource("3_k0juu")]
+position = Vector2(215, 478)
