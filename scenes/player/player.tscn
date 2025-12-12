@@ -271,6 +271,8 @@ radius = 7.0
 height = 26.0
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_gmlin")
 
 [node name="SpriteAnimation" type="AnimatedSprite2D" parent="."]
