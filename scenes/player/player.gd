@@ -41,8 +41,7 @@ func _physics_process(delta: float) -> void:
 		elif !is_attacking:
 			$SpriteAnimation.play("idle")
 
-	move_and_slide()
-
+	move_and_slide()	
 
 func attack() -> void:
 	if enemy:
