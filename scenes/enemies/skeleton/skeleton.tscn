@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://d1unwglon012"]
+[gd_scene load_steps=49 format=3 uid="uid://d1unwglon012"]
 
 [ext_resource type="Script" uid="uid://lcjdcnuxyegl" path="res://scenes/enemies/skeleton/skeleton.gd" id="1_me6e6"]
 [ext_resource type="Texture2D" uid="uid://clswcph7f1i1i" path="res://textures/enemies/Skeleton Warrior.png" id="1_t4oa3"]
@@ -207,7 +207,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack",
-"speed": 13.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -316,6 +316,28 @@ radius = 84.0
 radius = 19.0
 height = 52.0
 
+[sub_resource type="Animation" id="Animation_me6e6"]
+resource_name = "attack"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"hit_player"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i3wcf"]
+_data = {
+&"attack": SubResource("Animation_me6e6")
+}
+
 [node name="Skeleton" type="CharacterBody2D"]
 collision_layer = 4
 collision_mask = 3
@@ -323,7 +345,7 @@ script = ExtResource("1_me6e6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4umm2")
-animation = &"death"
+animation = &"attack"
 frame = 12
 frame_progress = 1.0
 
@@ -355,6 +377,11 @@ shape = SubResource("CapsuleShape2D_me6e6")
 [node name="AttackTimer" type="Timer" parent="Timers"]
 wait_time = 2.0
 one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_i3wcf")
+}
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]

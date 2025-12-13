@@ -5,10 +5,13 @@ extends CharacterBody2D
 @export var JUMP_VELOCITY = -300.0
 var is_attacking := false
 var enemy: CharacterBody2D
+var alive: bool = true
+
+signal player_died
 
 func _physics_process(delta: float) -> void:
 	#can't cancel attacking
-	if is_attacking:
+	if is_attacking or !alive:
 		return
 	
 	# Add the gravity.
@@ -58,5 +61,28 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	enemy = body as CharacterBody2D
 
 
-func _on_area_2d_body_exited(body: Node2D) -> void:
+func _on_area_2d_body_exited(_body: Node2D) -> void:
 	enemy = null
+	
+	
+func player_die():
+	$SpriteAnimation.play("death")
+	alive = false
+	emit_signal("player_died")
+
+func flash_player():
+	var original = $".".modulate
+	$".".modulate = Color(255, 255, 255)
+	velocity.y += 5
+	await get_tree().create_timer(0.2).timeout
+	$".".modulate = original
+
+func damage_player():
+	if Global.player_health <= 0:
+		return
+		
+	Global.player_health -= 1
+	print("Player health: " + str(Global.player_health))
+	if Global.player_health <= 0:
+		player_die()
+	flash_player()

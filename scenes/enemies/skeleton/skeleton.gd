@@ -47,13 +47,13 @@ func _on_detection_area_body_entered(body: Node2D) -> void:
 func attack():
 	$AnimatedSprite2D.play("attack")
 	attacking = true
+	$AnimationPlayer.play("attack")
 
 func _on_attack_area_body_entered(body: Node2D) -> void:
 	if health_points > 0:
 		attack()
 		player_in_area = true
 		$Timers/AttackTimer.start()
-
 func _on_attack_area_body_exited(body: Node2D) -> void:
 	player_in_area = false
 
@@ -62,7 +62,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		
 
 func _on_attack_timer_timeout() -> void:
-	print("Player_in_area: " + str(player_in_area))
+	#print("Player_in_area: " + str(player_in_area))
 	if player_in_area:
 		attack()
 		$Timers/AttackTimer.start()
@@ -88,4 +88,10 @@ func reduce_hp():
 	print("Lost hp, " + str(health_points) + " left.")
 	if health_points <= 0:
 		skeleton_die()
-	
+		
+func hit_player():
+	print("Hit player called")
+	if player_in_area:
+		print("Player in area")
+		if "damage_player" in player:
+			player.damage_player()
