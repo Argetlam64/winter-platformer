@@ -6,6 +6,8 @@ extends CharacterBody2D
 var is_attacking := false
 var enemy: CharacterBody2D
 var alive: bool = true
+const max_wall_jumps: int = 2
+var current_wall_jumps: int = max_wall_jumps
 
 signal player_died
 
@@ -17,6 +19,8 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+	elif current_wall_jumps < max_wall_jumps:
+		current_wall_jumps = max_wall_jumps
 		
 	var direction := Input.get_axis("left", "right")
 	if direction:
@@ -26,9 +30,15 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
 	
-	if Input.is_action_just_pressed("jump") and( is_on_wall() or is_on_floor()):
-			velocity.y = JUMP_VELOCITY
-			$SpriteAnimation.play("jump_up")
+	if Input.is_action_just_pressed("jump") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+		$SpriteAnimation.play("jump_up")
+	
+	elif Input.is_action_just_pressed("jump") and is_on_wall() and current_wall_jumps > 0:
+		current_wall_jumps -= 1
+		velocity.y = JUMP_VELOCITY
+		$SpriteAnimation.play("jump_up")
+		print("Wall jumps left: " + str(current_wall_jumps))
 			
 		# Handle jump.
 	if is_on_floor():	
