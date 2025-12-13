@@ -4,9 +4,9 @@ extends CharacterBody2D
 @export var SPEED = 100.0
 @export var JUMP_VELOCITY = -300.0
 var is_attacking := false
+var enemy: CharacterBody2D
 
 func _physics_process(delta: float) -> void:
-	
 	#can't cancel attacking
 	if is_attacking:
 		return
@@ -23,14 +23,15 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
 	
-		# Handle jump.
-	if is_on_floor():
-		if Input.is_action_just_pressed("jump") :
+	if Input.is_action_just_pressed("jump") and( is_on_wall() or is_on_floor()):
 			velocity.y = JUMP_VELOCITY
 			$SpriteAnimation.play("jump_up")
 			
-		elif Input.is_action_just_pressed("attack"):
+		# Handle jump.
+	if is_on_floor():	
+		if Input.is_action_just_pressed("attack"):
 			$SpriteAnimation.play("attack")
+			$AnimationPlayer.play("attack")
 			is_attacking = true
 			
 		elif direction:
@@ -42,6 +43,19 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()	
 
+func attack() -> void:
+	if enemy:
+		if "reduce_hp" in enemy:
+			enemy.reduce_hp()
+
 #check if the animation is finished (can't cancel attack)
 func _on_sprite_animation_animation_finished() -> void:
 	is_attacking = false
+		
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	enemy = body as CharacterBody2D
+
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	enemy = null
