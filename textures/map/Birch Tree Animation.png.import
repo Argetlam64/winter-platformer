@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bavnbg13g4sdn"
-path="res://.godot/imported/Tileset Grass Spring.png-e04ade4a1eefb91a51fc463f74836f6d.ctex"
+uid="uid://cklxs6nyfiji5"
+path="res://.godot/imported/Birch Tree Animation.png-8d5037d992d4a9de29e08b722bf73e2d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/Tileset Grass Spring.png"
-dest_files=["res://.godot/imported/Tileset Grass Spring.png-e04ade4a1eefb91a51fc463f74836f6d.ctex"]
+source_file="res://textures/map/Birch Tree Animation.png"
+dest_files=["res://.godot/imported/Birch Tree Animation.png-8d5037d992d4a9de29e08b722bf73e2d.ctex"]
 
 [params]
 

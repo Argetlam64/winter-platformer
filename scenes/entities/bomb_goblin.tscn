@@ -1,8 +1,8 @@
 [gd_scene load_steps=16 format=3 uid="uid://iussl4g0k4fv"]
 
-[ext_resource type="Texture2D" uid="uid://5k8phau1w87u" path="res://textures/Idle.png" id="1_0sbar"]
+[ext_resource type="Texture2D" uid="uid://5k8phau1w87u" path="res://textures/map/Idle.png" id="1_0sbar"]
 [ext_resource type="Script" uid="uid://i7ubcilguv8" path="res://scenes/entities/bomb_goblin.gd" id="1_bdn6u"]
-[ext_resource type="Texture2D" uid="uid://ccxvy0hf42qup" path="res://textures/Walk.png" id="2_kx84p"]
+[ext_resource type="Texture2D" uid="uid://ccxvy0hf42qup" path="res://textures/map/Walk.png" id="2_kx84p"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kcbtl"]
 atlas = ExtResource("1_0sbar")
@@ -88,18 +88,22 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0sbar"]
-size = Vector2(15, 20)
+size = Vector2(9, 18)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_bdn6u")
+SPEED = null
+JUMP_VELOCITY = null
+direction = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_5ja64")
-animation = &"idle"
-frame_progress = 0.56112087
+animation = &"walk"
+autoplay = "idle"
+frame_progress = 0.1290378
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2.5, 0)
+position = Vector2(0.5, 1)
 shape = SubResource("RectangleShape2D_0sbar")
 
 [node name="Camera2D" type="Camera2D" parent="."]

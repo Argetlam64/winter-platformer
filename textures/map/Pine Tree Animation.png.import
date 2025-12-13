@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5k8phau1w87u"
-path="res://.godot/imported/Idle.png-d9da429ffbeeb8d5c2087bddd98b4961.ctex"
+uid="uid://b806h47r8laiw"
+path="res://.godot/imported/Pine Tree Animation.png-ce6a8cf39440138ac6bd248b30a29389.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/Idle.png"
-dest_files=["res://.godot/imported/Idle.png-d9da429ffbeeb8d5c2087bddd98b4961.ctex"]
+source_file="res://textures/map/Pine Tree Animation.png"
+dest_files=["res://.godot/imported/Pine Tree Animation.png-ce6a8cf39440138ac6bd248b30a29389.ctex"]
 
 [params]
 

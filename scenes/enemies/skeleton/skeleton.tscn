@@ -210,9 +210,8 @@ animations = [{
 "speed": 7.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t4oa3"]
-radius = 9.999175
-height = 29.997528
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_me6e6"]
+size = Vector2(13.492464, 29.010458)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_me6e6"]
 radius = 84.0
@@ -230,9 +229,10 @@ animation = &"walking"
 frame_progress = 0.25504288
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-4, 5)
-rotation = -0.0128517905
-shape = SubResource("CapsuleShape2D_t4oa3")
+position = Vector2(-2.7468286, 4.9967465)
+rotation = -0.012851792
+scale = Vector2(0.9999997, 0.9999997)
+shape = SubResource("RectangleShape2D_me6e6")
 
 [node name="DetectionArea" type="Area2D" parent="."]
 collision_layer = 0

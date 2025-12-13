@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bq7fvmspwpdcb"
-path="res://.godot/imported/Tileset Grass Winter.png-b82c53476d8d6e4d20da2ad72628eeed.ctex"
+uid="uid://bavnbg13g4sdn"
+path="res://.godot/imported/Tileset Grass Spring.png-5c6d493b4e52bfae96653d39111d8b27.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/Tileset Grass Winter.png"
-dest_files=["res://.godot/imported/Tileset Grass Winter.png-b82c53476d8d6e4d20da2ad72628eeed.ctex"]
+source_file="res://textures/map/Tileset Grass Spring.png"
+dest_files=["res://.godot/imported/Tileset Grass Spring.png-5c6d493b4e52bfae96653d39111d8b27.ctex"]
 
 [params]
 

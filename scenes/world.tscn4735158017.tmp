@@ -1,8 +1,14 @@
-[gd_scene load_steps=4 format=4 uid="uid://84jplcv3gk2a"]
+[gd_scene load_steps=6 format=4 uid="uid://84jplcv3gk2a"]
 
 [ext_resource type="TileSet" uid="uid://bhtybqqmxypek" path="res://tiles/tileset.tres" id="1_f3sb7"]
 [ext_resource type="PackedScene" uid="uid://d1unwglon012" path="res://scenes/enemies/skeleton/skeleton.tscn" id="2_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://cw5l3h3ncruh1" path="res://scenes/player/player.tscn" id="3_k0juu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4wyf3"]
+size = Vector2(20, 294)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0juu"]
+size = Vector2(20, 271)
 
 [node name="Node2D" type="Node2D"]
 
@@ -22,5 +28,16 @@ position = Vector2(399, 277)
 [node name="Skeleton2" parent="." instance=ExtResource("2_4wyf3")]
 position = Vector2(545, 227)
 
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 265)
+shape = SubResource("RectangleShape2D_4wyf3")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(693, 239)
+shape = SubResource("RectangleShape2D_k0juu")
+
 [node name="Player" parent="." instance=ExtResource("3_k0juu")]
-position = Vector2(123, 257)
+SPEED = 100.0
+JUMP_VELOCITY = -300.0
