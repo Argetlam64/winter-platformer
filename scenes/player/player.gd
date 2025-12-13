@@ -31,8 +31,7 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():	
 		if Input.is_action_just_pressed("attack"):
 			$SpriteAnimation.play("attack")
-
-				
+			$AnimationPlayer.play("attack")
 			is_attacking = true
 			
 		elif direction:
@@ -45,13 +44,15 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
+func attack() -> void:
+	if enemy:
+		if "reduce_hp" in enemy:
+			enemy.reduce_hp()
+
 #check if the animation is finished (can't cancel attack)
 func _on_sprite_animation_animation_finished() -> void:
-	if is_attacking:
-		is_attacking = false
-		if enemy:
-			if "reduce_hp" in enemy:
-				enemy.reduce_hp()
+	is_attacking = false
+		
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	enemy = body as CharacterBody2D
