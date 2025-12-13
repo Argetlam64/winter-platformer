@@ -375,7 +375,7 @@ shape = SubResource("CapsuleShape2D_me6e6")
 [node name="Timers" type="Node2D" parent="."]
 
 [node name="AttackTimer" type="Timer" parent="Timers"]
-wait_time = 2.0
+wait_time = 2.5
 one_shot = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

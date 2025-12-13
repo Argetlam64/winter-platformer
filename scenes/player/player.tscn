@@ -362,10 +362,13 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_75vfm"]
-size = Vector2(15, 26.25)
+size = Vector2(17, 31.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_75vfm"]
-size = Vector2(58, 28)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0owmy"]
+size = Vector2(47, 26)
+
+[sub_resource type="Animation" id="Animation_0owmy"]
+length = 0.001
 
 [sub_resource type="Animation" id="Animation_75vfm"]
 resource_name = "attack"
@@ -385,9 +388,6 @@ tracks/0/keys = {
 }]
 }
 
-[sub_resource type="Animation" id="Animation_0owmy"]
-length = 0.001
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0owmy"]
 _data = {
 &"RESET": SubResource("Animation_0owmy"),
@@ -401,13 +401,11 @@ script = ExtResource("1_gmlin")
 
 [node name="SpriteAnimation" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_yj68g")
-animation = &"death"
+animation = &"idle"
 autoplay = "idle"
-frame = 11
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 11)
+position = Vector2(0.5, 9.6)
 scale = Vector2(1, 0.8)
 shape = SubResource("RectangleShape2D_75vfm")
 
@@ -420,8 +418,8 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-1, 9)
-shape = SubResource("RectangleShape2D_75vfm")
+position = Vector2(1.5, 8)
+shape = SubResource("RectangleShape2D_0owmy")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

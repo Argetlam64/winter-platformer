@@ -1,7 +1,7 @@
 [gd_resource type="TileSet" load_steps=13 format=3 uid="uid://bhtybqqmxypek"]
 
-[ext_resource type="Texture2D" uid="uid://bavnbg13g4sdn" path="res://textures/map/Tileset Grass Spring.png" id="1_r30xe"]
-[ext_resource type="Texture2D" uid="uid://bq7fvmspwpdcb" path="res://textures/map/Tileset Grass Winter.png" id="2_vm1us"]
+[ext_resource type="Texture2D" uid="uid://bavnbg13g4sdn" path="res://textures/Tileset Grass Spring.png" id="1_r30xe"]
+[ext_resource type="Texture2D" uid="uid://bq7fvmspwpdcb" path="res://textures/Tileset Grass Winter.png" id="2_vm1us"]
 [ext_resource type="Texture2D" uid="uid://cklxs6nyfiji5" path="res://textures/map/Birch Tree Animation.png" id="3_f35we"]
 [ext_resource type="Texture2D" uid="uid://bf72flb3t4hya" path="res://textures/map/Maple Tree Animation.png" id="4_boj70"]
 [ext_resource type="Texture2D" uid="uid://2ygvet4fm4by" path="res://textures/map/Mahogany Tree Animation.png" id="5_1c3su"]
