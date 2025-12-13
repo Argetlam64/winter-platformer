@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=4 uid="uid://84jplcv3gk2a"]
+[gd_scene load_steps=4 format=4 uid="uid://cdmknbiwvgt"]
 
 [ext_resource type="TileSet" uid="uid://bhtybqqmxypek" path="res://tiles/tileset.tres" id="1_f3sb7"]
 [ext_resource type="PackedScene" uid="uid://d1unwglon012" path="res://scenes/enemies/skeleton/skeleton.tscn" id="2_4wyf3"]
@@ -17,7 +17,7 @@ tile_map_data = PackedByteArray("AAAAAA0AAAAJAAcAAAAAAA4AAAAKAAQAAAABAA0AAAAJAAc
 tile_set = ExtResource("1_f3sb7")
 
 [node name="Skeleton" parent="." instance=ExtResource("2_4wyf3")]
-position = Vector2(399, 277)
+position = Vector2(236, 277)
 
 [node name="Skeleton2" parent="." instance=ExtResource("2_4wyf3")]
 position = Vector2(545, 227)
