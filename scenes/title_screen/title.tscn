@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2ttjygbyf0hn"]
+
+[ext_resource type="FontFile" uid="uid://dpggxbhjsd12t" path="res://scenes/title_screen/fonts/PirataOne-Regular.ttf" id="1_eijef"]
+[ext_resource type="PackedScene" uid="uid://fpfavheipcpa" path="res://scenes/title_screen/title_screen_scene.tscn" id="1_jabqi"]
+
+[node name="Title" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="title_screen_scene" parent="." instance=ExtResource("1_jabqi")]
+position = Vector2(578, 340)
+
+[node name="label_title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 740.0
+offset_top = 203.0
+offset_right = 940.0
+offset_bottom = 344.0
+theme_override_constants/line_spacing = -15
+theme_override_fonts/font = ExtResource("1_eijef")
+theme_override_font_sizes/font_size = 60
+text = "Winter 
+Escape"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="label_press" type="Label" parent="."]
+layout_mode = 0
+offset_left = 763.0
+offset_top = 337.0
+offset_right = 913.0
+offset_bottom = 378.0
+theme_override_constants/line_spacing = -15
+theme_override_font_sizes/font_size = 16
+text = "press 'E' to play
+"
+horizontal_alignment = 1
+vertical_alignment = 1
