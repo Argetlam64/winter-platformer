@@ -3,8 +3,10 @@ extends Control
 var death_timeout_finished = false
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
+func start() -> void:
 	$ContinueLabel.visible = false
+	$".".visible = true
+	$Node2D/DeathTimer.start()
 	
 func back_to_game():
 	Global.player_health = Global.max_player_health
