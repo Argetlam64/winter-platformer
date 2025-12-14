@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://cw5l3h3ncruh1"]
+[gd_scene load_steps=68 format=3 uid="uid://cw5l3h3ncruh1"]
 
 [ext_resource type="Texture2D" uid="uid://dx68yssbebvas" path="res://textures/character/Battlemage Fantasy Character/Battlemage Complete (Sprite Sheet)/Idle/Battlemage Idle.png" id="1_dovo2"]
 [ext_resource type="Script" uid="uid://b06eg6hgptrpo" path="res://scenes/player/player.gd" id="1_gmlin"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cr2e16clw22gx" path="res://textures/character/Battlemage Fantasy Character/Battlemage Complete (Sprite Sheet)/Running/Battlemage Run.png" id="2_gmlin"]
 [ext_resource type="Texture2D" uid="uid://m4od6p0mtpgr" path="res://textures/character/Battlemage Fantasy Character/Battlemage Complete (Sprite Sheet)/Jump Foward/Going Down/Jump Foward Going Down.png" id="2_p47bc"]
 [ext_resource type="Texture2D" uid="uid://cfg0o55ufecd8" path="res://textures/character/Battlemage Fantasy Character/Battlemage Complete (Sprite Sheet)/Death/Battlemage Death.png" id="3_0owmy"]
+[ext_resource type="Texture2D" uid="uid://nexv2a8xyj45" path="res://textures/character/Battlemage Fantasy Character/Battlemage Complete (Sprite Sheet)/Dash/Battlemage Dash.png" id="3_5gtgg"]
 [ext_resource type="Texture2D" uid="uid://c6i8v8ndsi5cm" path="res://textures/character/Battlemage Fantasy Character/Battlemage Complete (Sprite Sheet)/Jump Foward/Going Up/Jump Foward Going Up.png" id="4_75vfm"]
 [ext_resource type="Texture2D" uid="uid://1i5yadab1bkf" path="res://textures/player_light.png" id="8_qek5x"]
 
@@ -40,6 +41,34 @@ region = Rect2(0, 288, 56, 48)
 [sub_resource type="AtlasTexture" id="AtlasTexture_kxw46"]
 atlas = ExtResource("2_75vfm")
 region = Rect2(0, 336, 56, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1u1sw"]
+atlas = ExtResource("3_5gtgg")
+region = Rect2(0, 0, 56, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2t3bg"]
+atlas = ExtResource("3_5gtgg")
+region = Rect2(0, 48, 56, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrbya"]
+atlas = ExtResource("3_5gtgg")
+region = Rect2(0, 96, 56, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ahqnk"]
+atlas = ExtResource("3_5gtgg")
+region = Rect2(0, 144, 56, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vb1ce"]
+atlas = ExtResource("3_5gtgg")
+region = Rect2(0, 192, 56, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ncpa"]
+atlas = ExtResource("3_5gtgg")
+region = Rect2(0, 240, 56, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_upxxc"]
+atlas = ExtResource("3_5gtgg")
+region = Rect2(0, 288, 56, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8qxvo"]
 atlas = ExtResource("3_0owmy")
@@ -226,6 +255,32 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_1u1sw")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_2t3bg")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_jrbya")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_ahqnk")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_vb1ce")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_0ncpa")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_upxxc")
+}],
+"loop": false,
+"name": &"dash",
+"speed": 5.0
+}, {
+"frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8qxvo")
 }, {
@@ -362,9 +417,8 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qek5x"]
-radius = 6.5
-height = 27.25
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qek5x"]
+size = Vector2(15, 27.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0owmy"]
 size = Vector2(47, 26)
@@ -403,13 +457,13 @@ script = ExtResource("1_gmlin")
 
 [node name="SpriteAnimation" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_yj68g")
-animation = &"idle"
+animation = &"dash"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 11.1)
+position = Vector2(-0.5, 11)
 scale = Vector2(1, 0.8)
-shape = SubResource("CapsuleShape2D_qek5x")
+shape = SubResource("RectangleShape2D_qek5x")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.5, 2.5)
@@ -434,6 +488,13 @@ energy = 2.0
 texture = ExtResource("8_qek5x")
 texture_scale = 31.0
 
+[node name="DashTimer" type="Timer" parent="."]
+wait_time = 0.2
+
+[node name="DashCooldown" type="Timer" parent="."]
+
 [connection signal="animation_finished" from="SpriteAnimation" to="." method="_on_sprite_animation_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
+[connection signal="timeout" from="DashCooldown" to="." method="_on_dash_cooldown_timeout"]

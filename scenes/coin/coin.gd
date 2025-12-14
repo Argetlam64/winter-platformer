@@ -16,6 +16,9 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("interact") and available:
 		pickup()
 
+func start(pos: Vector2):
+	position = pos
+
 
 func _on_body_entered(_body: Node2D) -> void:
 	#set_item_visible(true)
