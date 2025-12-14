@@ -1,8 +1,12 @@
-[gd_scene load_steps=18 format=3 uid="uid://dlf5vswl2lcu4"]
+[gd_scene load_steps=20 format=3 uid="uid://dlf5vswl2lcu4"]
 
 [ext_resource type="Texture2D" uid="uid://csosxwykydrmw" path="res://textures/Money.png" id="1_8xqtt"]
 [ext_resource type="Script" uid="uid://c3geol2vhwbdr" path="res://scenes/coin/coin.gd" id="1_qcha5"]
+[ext_resource type="FontFile" uid="uid://cojsua2s34upb" path="res://textures/fonts/Better VCR 9.0.1.ttf" id="2_f38ba"]
 [ext_resource type="Texture2D" uid="uid://bitxgdmehkqpn" path="res://textures/HUD.png" id="2_vrqvt"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_5vuvm"]
+viewport_path = NodePath("SubViewport")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8xqtt"]
 radius = 16.0
@@ -181,6 +185,33 @@ _data = {
 collision_layer = 16
 collision_mask = 2
 script = ExtResource("1_qcha5")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(64, 32)
+
+[node name="Control" type="Control" parent="SubViewport"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="SubViewport/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_f38ba")
+theme_override_font_sizes/font_size = 14
+text = "E"
+
+[node name="XSprite" type="Sprite2D" parent="."]
+position = Vector2(27, -33)
+texture = SubResource("ViewportTexture_5vuvm")
 
 [node name="WoodArea" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_8xqtt")

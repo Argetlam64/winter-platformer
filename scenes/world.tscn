@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://cdmknbiwvgt"]
+[gd_scene load_steps=10 format=4 uid="uid://cdmknbiwvgt"]
 
 [ext_resource type="Script" uid="uid://jysaib40meg3" path="res://scenes/world.gd" id="1_71j4m"]
 [ext_resource type="TileSet" uid="uid://bhtybqqmxypek" path="res://tiles/tileset.tres" id="1_f3sb7"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://styss4if42n7" path="res://scenes/trader/trader.tscn" id="6_4mrxx"]
 [ext_resource type="PackedScene" uid="uid://q8sihi7v4m2r" path="res://scenes/game_over_screen/game_over_screen.tscn" id="6_qfnet"]
 [ext_resource type="PackedScene" uid="uid://dlf5vswl2lcu4" path="res://scenes/coin/coin.tscn" id="7_i7141"]
+[ext_resource type="PackedScene" uid="uid://b50mycp8wrsvw" path="res://scenes/fire/fire.tscn" id="9_7r4gi"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_71j4m")
@@ -34,6 +35,27 @@ position = Vector2(332, 284)
 [node name="Coin3" parent="Coins" instance=ExtResource("7_i7141")]
 position = Vector2(415, 286)
 
+[node name="Coin4" parent="Coins" instance=ExtResource("7_i7141")]
+position = Vector2(529.25256, 281.11496)
+
+[node name="Coin5" parent="Coins" instance=ExtResource("7_i7141")]
+position = Vector2(829.7251, 534.2591)
+
+[node name="Coin6" parent="Coins" instance=ExtResource("7_i7141")]
+position = Vector2(923.95953, 600.9696)
+
+[node name="Coin7" parent="Coins" instance=ExtResource("7_i7141")]
+position = Vector2(717.7633, 600.9696)
+
+[node name="Coin8" parent="Coins" instance=ExtResource("7_i7141")]
+position = Vector2(573.14594, 652.28546)
+
+[node name="Coin9" parent="Coins" instance=ExtResource("7_i7141")]
+position = Vector2(602.0694, 578.11084)
+
+[node name="Coin10" parent="Coins" instance=ExtResource("7_i7141")]
+position = Vector2(327.76312, 515.13226)
+
 [node name="Skeletons" type="Node2D" parent="."]
 
 [node name="Skeleton" parent="Skeletons" instance=ExtResource("2_4wyf3")]
@@ -43,7 +65,13 @@ position = Vector2(882.29065, 226.42271)
 position = Vector2(760.5323, 235.75285)
 
 [node name="Trader" parent="." instance=ExtResource("6_4mrxx")]
-position = Vector2(549, 288)
+position = Vector2(2780.0305, 1725.3289)
+
+[node name="Trader2" parent="." instance=ExtResource("6_4mrxx")]
+position = Vector2(36.694992, 296.61456)
+
+[node name="Fire" parent="." instance=ExtResource("9_7r4gi")]
+position = Vector2(194.4711, 300.37115)
 
 [node name="Player" parent="." instance=ExtResource("3_k0juu")]
 position = Vector2(123, 257)
@@ -51,6 +79,7 @@ position = Vector2(123, 257)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="GameOverlay" parent="CanvasLayer" instance=ExtResource("4_k0juu")]
+visible = false
 
 [node name="GameOverScreen" parent="CanvasLayer" instance=ExtResource("6_qfnet")]
 visible = false
@@ -70,6 +99,7 @@ blend_mode = 2
 color = Color(2.695322e-06, 0.8945244, 0.89380103, 1)
 
 [connection signal="picked_up_coin" from="Coins/Coin1" to="." method="_on_wood_2_picked_up_coin"]
+[connection signal="fire_lit" from="Fire" to="." method="_on_fire_fire_lit"]
 [connection signal="player_damaged" from="Player" to="." method="_on_player_player_damaged"]
 [connection signal="player_died" from="Player" to="." method="_on_player_player_died"]
 [connection signal="update_wall_jump_count" from="Player" to="." method="_on_player_update_wall_jump_count"]

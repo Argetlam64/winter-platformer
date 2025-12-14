@@ -1,0 +1,203 @@
+[gd_scene load_steps=24 format=3 uid="uid://b50mycp8wrsvw"]
+
+[ext_resource type="Script" uid="uid://dc6qvagryu7dh" path="res://scenes/fire/fire.gd" id="1_q1gbd"]
+[ext_resource type="Texture2D" uid="uid://2tnlatjbuf5w" path="res://textures/campfire-sheet.png" id="1_q881c"]
+[ext_resource type="Texture2D" uid="uid://b806h47r8laiw" path="res://textures/map/Pine Tree Animation.png" id="2_86rjs"]
+[ext_resource type="FontFile" uid="uid://cojsua2s34upb" path="res://textures/fonts/Better VCR 9.0.1.ttf" id="4_fr8g7"]
+[ext_resource type="Texture2D" uid="uid://bitxgdmehkqpn" path="res://textures/HUD.png" id="5_vrktp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86rjs"]
+atlas = ExtResource("1_q881c")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1gbd"]
+atlas = ExtResource("1_q881c")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ojku6"]
+atlas = ExtResource("1_q881c")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fr8g7"]
+atlas = ExtResource("1_q881c")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vrktp"]
+atlas = ExtResource("1_q881c")
+region = Rect2(128, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1bwvn"]
+atlas = ExtResource("1_q881c")
+region = Rect2(160, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xgc1p"]
+atlas = ExtResource("1_q881c")
+region = Rect2(192, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2efl4"]
+atlas = ExtResource("1_q881c")
+region = Rect2(224, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d07py"]
+atlas = ExtResource("2_86rjs")
+region = Rect2(0, 144, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_muxsx"]
+atlas = ExtResource("2_86rjs")
+region = Rect2(64, 144, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hf6jt"]
+atlas = ExtResource("2_86rjs")
+region = Rect2(96, 144, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d07py"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86rjs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q1gbd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ojku6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fr8g7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vrktp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1bwvn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xgc1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2efl4")
+}],
+"loop": true,
+"name": &"lit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d07py")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_muxsx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hf6jt")
+}],
+"loop": true,
+"name": &"not_lit",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q881c"]
+radius = 51.0392
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_fr8g7"]
+viewport_path = NodePath("InsufficientOverlay/SubViewport2")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6dwpc"]
+atlas = ExtResource("5_vrktp")
+region = Rect2(176, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_axbok"]
+atlas = ExtResource("5_vrktp")
+region = Rect2(176, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xgc1p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6dwpc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_axbok")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ojku6"]
+viewport_path = NodePath("SufficientOverlay/SubViewport")
+
+[node name="Fire" type="Area2D"]
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("1_q1gbd")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_d07py")
+animation = &"lit"
+autoplay = "not_lit"
+frame_progress = 0.23477916
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_q881c")
+
+[node name="InsufficientOverlay" type="Node2D" parent="."]
+
+[node name="SubViewport2" type="SubViewport" parent="InsufficientOverlay"]
+transparent_bg = true
+size = Vector2i(128, 32)
+
+[node name="Control2" type="Control" parent="InsufficientOverlay/SubViewport2"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label2" type="Label" parent="InsufficientOverlay/SubViewport2/Control2"]
+layout_mode = 1
+offset_right = 81.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("4_fr8g7")
+theme_override_font_sizes/font_size = 12
+text = "0/0 wood"
+
+[node name="Sprite2D2" type="Sprite2D" parent="InsufficientOverlay"]
+position = Vector2(37, -8)
+scale = Vector2(1.2148438, 1)
+texture = SubResource("ViewportTexture_fr8g7")
+
+[node name="SufficientOverlay" type="Node2D" parent="."]
+
+[node name="WoodArrow" type="AnimatedSprite2D" parent="SufficientOverlay"]
+position = Vector2(0, -13)
+scale = Vector2(1.5625, 1.375)
+sprite_frames = SubResource("SpriteFrames_xgc1p")
+autoplay = "default"
+
+[node name="SubViewport" type="SubViewport" parent="SufficientOverlay"]
+transparent_bg = true
+size = Vector2i(64, 64)
+
+[node name="Control" type="Control" parent="SufficientOverlay/SubViewport"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="SufficientOverlay/SubViewport/Control"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+offset_right = 40.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("4_fr8g7")
+text = "E"
+
+[node name="ESprite" type="Sprite2D" parent="SufficientOverlay"]
+position = Vector2(25, -24)
+texture = SubResource("ViewportTexture_ojku6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
