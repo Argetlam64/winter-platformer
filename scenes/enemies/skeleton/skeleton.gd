@@ -8,12 +8,14 @@ var player_in_area = false
 var original_pos = position
 var health_points: int = 3
 
+
 func _physics_process(delta: float) -> void:
 
-		
 	velocity = Vector2(0, velocity.y)
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+	
+
 		
 	if attacking or health_points <= 0:
 		move_and_slide()
@@ -49,12 +51,13 @@ func attack():
 	attacking = true
 	$AnimationPlayer.play("attack")
 
-func _on_attack_area_body_entered(body: Node2D) -> void:
+func _on_attack_area_body_entered(_body: Node2D) -> void:
 	if health_points > 0:
 		attack()
 		player_in_area = true
 		$Timers/AttackTimer.start()
-func _on_attack_area_body_exited(body: Node2D) -> void:
+		
+func _on_attack_area_body_exited(_body: Node2D) -> void:
 	player_in_area = false
 
 func _on_animated_sprite_2d_animation_finished() -> void:
