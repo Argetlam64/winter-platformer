@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bf0ba7mx66gt8"]
+[gd_scene load_steps=6 format=3 uid="uid://bf0ba7mx66gt8"]
 
 [ext_resource type="Script" uid="uid://crcvbp3s6hgju" path="res://scenes/game_overlay/overlay.gd" id="1_yf2sk"]
 [ext_resource type="FontFile" uid="uid://cojsua2s34upb" path="res://textures/fonts/Better VCR 9.0.1.ttf" id="2_5f6ye"]
 [ext_resource type="Texture2D" uid="uid://ba77csrlje8ak" path="res://textures/Money one.png" id="3_wlswc"]
 [ext_resource type="Texture2D" uid="uid://d3gocrwfp01fu" path="res://textures/fb202.png" id="4_nit6v"]
+[ext_resource type="Texture2D" uid="uid://b5umaxgkvylhv" path="res://textures/snowflake.png" id="5_k5oma"]
 
 [node name="GameOverlay" type="Control"]
 layout_mode = 3
@@ -87,7 +88,31 @@ offset_right = -20.0
 offset_bottom = 23.0
 grow_horizontal = 0
 theme_override_fonts/font = ExtResource("2_5f6ye")
-text = "Interact: F
+text = "Interact: E
 Jump: Space
-Attack: E
+Attack: F
 Move: WASD"
+
+[node name="FrostBar" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -2.0
+offset_top = 30.0
+offset_right = 198.0
+offset_bottom = 57.0
+grow_horizontal = 2
+show_percentage = false
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 30.0
+offset_right = -60.0
+offset_bottom = 40.0
+grow_horizontal = 2
+texture = ExtResource("5_k5oma")

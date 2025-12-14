@@ -98,3 +98,10 @@ func damage_player():
 	if Global.player_health <= 0:
 		player_die()
 	flash_player()
+	
+func change_frost_radius(val: float):
+	var new_radius = Global.max_player_light_scale - Global.max_player_light_scale * val / Global.max_frost
+	if new_radius >= 0:
+		$PointLight2D.texture_scale = new_radius
+		print("New radius:" + str(new_radius))
+	

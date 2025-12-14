@@ -40,3 +40,11 @@ func coin_collected() -> void:
 func traded() -> void:
 	$CanvasLayer/GameOverlay.update_coin_count(Global.coin_count)
 	$CanvasLayer/GameOverlay.update_wood_count(Global.wood_count)
+
+
+func _on_frost_timer_timeout() -> void:
+	Global.frost += 1
+	$CanvasLayer/GameOverlay.update_frost(Global.frost)
+	$Player.change_frost_radius(Global.frost)
+	if Global.frost >= Global.max_frost:
+		$Player.damage_player()
