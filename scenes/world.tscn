@@ -9,17 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://q8sihi7v4m2r" path="res://scenes/game_over_screen/game_over_screen.tscn" id="6_qfnet"]
 [ext_resource type="PackedScene" uid="uid://dlf5vswl2lcu4" path="res://scenes/coin/coin.tscn" id="7_i7141"]
 [ext_resource type="PackedScene" uid="uid://cth21gb7qtfsq" path="res://scenes/win_screen/win_screen.tscn" id="8_w7kh3"]
-[ext_resource type="PackedScene" uid="uid://b50mycp8wrsvw" path="res://scenes/fire/fire.tscn" id="9_7r4gi"]
-[ext_resource type="Texture2D" uid="uid://cqjd0tjqp221q" path="res://textures/fog.png" id="11_e3hyu"]
-[ext_resource type="Texture2D" uid="uid://dworb1v7frylr" path="res://textures/Black.png" id="12_q5onr"]
-[ext_resource type="Texture2D" uid="uid://c8uujm2a7g1cy" path="res://textures/snow.png" id="13_o8fc1"]
-[ext_resource type="Texture2D" uid="uid://ctgalbs2diydy" path="res://textures/snow_2.png" id="14_xo05s"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_e3hyu"]
-size = Vector2(133, 861)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_q5onr"]
-size = Vector2(130, 834)
+[ext_resource type="PackedScene" uid="uid://b50mycp8wrsvw" path="res://scenes/title_screen/fire/fire_title_screen.tscn" id="9_7r4gi"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_71j4m")
