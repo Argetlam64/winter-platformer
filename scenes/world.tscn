@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://cdmknbiwvgt"]
+[gd_scene load_steps=15 format=4 uid="uid://cdmknbiwvgt"]
 
 [ext_resource type="Script" uid="uid://jysaib40meg3" path="res://scenes/world.gd" id="1_71j4m"]
 [ext_resource type="TileSet" uid="uid://bhtybqqmxypek" path="res://tiles/tileset.tres" id="1_f3sb7"]
@@ -10,7 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://dlf5vswl2lcu4" path="res://scenes/coin/coin.tscn" id="7_i7141"]
 [ext_resource type="PackedScene" uid="uid://cth21gb7qtfsq" path="res://scenes/win_screen/win_screen.tscn" id="8_w7kh3"]
 [ext_resource type="PackedScene" uid="uid://b50mycp8wrsvw" path="res://scenes/fire/fire.tscn" id="9_7r4gi"]
-[ext_resource type="Texture2D" uid="uid://dworb1v7frylr" path="res://textures/Black.png" id="11_e3hyu"]
+[ext_resource type="Texture2D" uid="uid://cqjd0tjqp221q" path="res://textures/fog.png" id="11_e3hyu"]
+[ext_resource type="Texture2D" uid="uid://dworb1v7frylr" path="res://textures/Black.png" id="12_q5onr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e3hyu"]
 size = Vector2(133, 861)
@@ -431,7 +432,7 @@ color = Color(2.695322e-06, 0.8945244, 0.89380103, 1)
 show_behind_parent = true
 position = Vector2(1578, 554.00006)
 scale = Vector2(1.9110831, 3.0570073)
-texture = ExtResource("11_e3hyu")
+texture = ExtResource("12_q5onr")
 
 [node name="WorldBounds" type="StaticBody2D" parent="."]
 
@@ -440,8 +441,52 @@ position = Vector2(-201.5, 43.5)
 shape = SubResource("RectangleShape2D_e3hyu")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="WorldBounds"]
-position = Vector2(3198, 108)
+position = Vector2(3149, 118)
 shape = SubResource("RectangleShape2D_q5onr")
+
+[node name="Fog" type="Node2D" parent="."]
+show_behind_parent = true
+
+[node name="Fog 1" type="Sprite2D" parent="Fog"]
+show_behind_parent = true
+position = Vector2(-28, 156)
+texture = ExtResource("11_e3hyu")
+
+[node name="Fog 2" type="Sprite2D" parent="Fog"]
+show_behind_parent = true
+position = Vector2(2515, 34)
+texture = ExtResource("11_e3hyu")
+
+[node name="Fog 3" type="Sprite2D" parent="Fog"]
+show_behind_parent = true
+position = Vector2(2245, 114)
+texture = ExtResource("11_e3hyu")
+
+[node name="Fog 4" type="Sprite2D" parent="Fog"]
+show_behind_parent = true
+position = Vector2(537, 135)
+scale = Vector2(0.69021726, 1)
+texture = ExtResource("11_e3hyu")
+
+[node name="Fog 5" type="Sprite2D" parent="Fog"]
+show_behind_parent = true
+position = Vector2(1124, 165)
+texture = ExtResource("11_e3hyu")
+
+[node name="Fog 6" type="Sprite2D" parent="Fog"]
+show_behind_parent = true
+position = Vector2(878, 103)
+texture = ExtResource("11_e3hyu")
+
+[node name="Fog 7" type="Sprite2D" parent="Fog"]
+show_behind_parent = true
+position = Vector2(878, 103)
+texture = ExtResource("11_e3hyu")
+
+[node name="Fog 8" type="Sprite2D" parent="Fog"]
+show_behind_parent = true
+position = Vector2(1050, 14)
+texture = ExtResource("11_e3hyu")
 
 [connection signal="picked_up_coin" from="Coins/Coin1" to="." method="_on_wood_2_picked_up_coin"]
 [connection signal="picked_up_coin" from="Coins/Coin11" to="." method="_on_wood_2_picked_up_coin"]
