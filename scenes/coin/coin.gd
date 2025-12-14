@@ -4,15 +4,18 @@ signal picked_up_coin
 var available: bool = false
 var exists: bool = true
 
+func set_item_visible(val: bool):
+	$WoodArrow.visible = val
+	$SubViewport/Control/Label.visible = val
+
 func _ready() -> void:
-	$WoodArrow.visible = false
+	set_item_visible(false)
+	
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("interact") and available:
 		pickup()
 
-func set_item_visible(val: bool):
-	$WoodArrow.visible = val
 
 func _on_body_entered(_body: Node2D) -> void:
 	set_item_visible(true)

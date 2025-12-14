@@ -1,8 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://styss4if42n7"]
+[gd_scene load_steps=18 format=3 uid="uid://styss4if42n7"]
 
 [ext_resource type="Texture2D" uid="uid://dbfv5y3kerw1g" path="res://textures/enemies/Skeleton Mage.png" id="1_bpfcs"]
 [ext_resource type="Script" uid="uid://ogvq7omvd47g" path="res://scenes/trader/trader.gd" id="1_icvyf"]
 [ext_resource type="Texture2D" uid="uid://bitxgdmehkqpn" path="res://textures/HUD.png" id="3_4ywav"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_4ywav"]
+viewport_path = NodePath("SubViewport")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bpfcs"]
 radius = 42.0119
@@ -98,6 +101,27 @@ collision_layer = 16
 collision_mask = 2
 script = ExtResource("1_icvyf")
 
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(32, 32)
+
+[node name="Control" type="Control" parent="SubViewport"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="SubViewport/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "E"
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(15.75, -39.000004)
+scale = Vector2(1.046875, 1.03125)
+texture = SubResource("ViewportTexture_4ywav")
+
 [node name="Area2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_bpfcs")
 
@@ -112,6 +136,11 @@ position = Vector2(3, -24)
 scale = Vector2(1.5625, 1.375)
 sprite_frames = SubResource("SpriteFrames_cb75q")
 autoplay = "default"
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-1, -5)
+
+[node name="WoodItems" type="Node2D" parent="."]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
