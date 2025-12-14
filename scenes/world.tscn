@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://cdmknbiwvgt"]
+[gd_scene load_steps=7 format=4 uid="uid://cdmknbiwvgt"]
 
 [ext_resource type="Script" uid="uid://jysaib40meg3" path="res://scenes/world.gd" id="1_71j4m"]
 [ext_resource type="TileSet" uid="uid://bhtybqqmxypek" path="res://tiles/tileset.tres" id="1_f3sb7"]
 [ext_resource type="PackedScene" uid="uid://d1unwglon012" path="res://scenes/enemies/skeleton/skeleton.tscn" id="2_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://cw5l3h3ncruh1" path="res://scenes/player/player.tscn" id="3_k0juu"]
 [ext_resource type="PackedScene" uid="uid://bf0ba7mx66gt8" path="res://scenes/game_overlay/overlay.tscn" id="4_k0juu"]
+[ext_resource type="PackedScene" uid="uid://q8sihi7v4m2r" path="res://scenes/game_over_screen/game_over_screen.tscn" id="6_qfnet"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_71j4m")
@@ -31,6 +32,8 @@ position = Vector2(123, 257)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="GameOverlay" parent="CanvasLayer" instance=ExtResource("4_k0juu")]
+
+[node name="GameOverScreen" parent="CanvasLayer" instance=ExtResource("6_qfnet")]
 
 [connection signal="player_damaged" from="Player" to="." method="_on_player_player_damaged"]
 [connection signal="player_died" from="Player" to="." method="_on_player_player_died"]

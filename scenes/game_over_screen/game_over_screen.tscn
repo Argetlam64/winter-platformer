@@ -43,16 +43,17 @@ offset_right = 20.0
 offset_bottom = -50.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_l2cnm")
+theme_override_font_sizes/font_size = 20
 text = "Press \"space\" to restart the game"
 
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="DeathTimer" type="Timer" parent="Node2D"]
-autostart = true
 
 [node name="BlinkTimer" type="Timer" parent="Node2D"]
 wait_time = 0.5
-autostart = true
 
 [connection signal="timeout" from="Node2D/DeathTimer" to="." method="_on_death_timer_timeout"]
 [connection signal="timeout" from="Node2D/BlinkTimer" to="." method="_on_blink_timer_timeout"]
