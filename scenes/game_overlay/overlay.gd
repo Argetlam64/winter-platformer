@@ -21,3 +21,6 @@ func update_wall_jump_count(count: int):
 
 func update_coin_count(val: int):
 	$CoinCount.text = ": " + str(val)
+
+func update_wood_count(val: int):
+	$WoodCount.text = ": " + str(val)

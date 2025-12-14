@@ -2,6 +2,7 @@ extends Area2D
 
 signal picked_up_coin
 var available: bool = false
+var exists: bool = true
 
 func _ready() -> void:
 	$WoodArrow.visible = false
@@ -24,9 +25,11 @@ func _on_body_exited(_body: Node2D) -> void:
 
 
 func pickup():
-	Global.coin_count += 1
-	$AnimationPlayer.play("pickup")
-	emit_signal("picked_up_coin")
+	if exists:
+		Global.coin_count += 1
+		exists = false
+		$AnimationPlayer.play("pickup")
+		emit_signal("picked_up_coin")
 
 func destroy():
 	queue_free()

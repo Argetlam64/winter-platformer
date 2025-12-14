@@ -5,8 +5,12 @@ extends Node2D
 func _ready() -> void:
 	$CanvasLayer/GameOverScreen.visible = false
 	var coins = get_tree().get_nodes_in_group("coins")
+	var traders = get_tree().get_nodes_in_group("trader")
 	for coin in coins:
 		coin.picked_up_coin.connect(coin_collected)
+	
+	for trader in traders:
+		trader.traded_for_wood.connect(traded)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -32,3 +36,7 @@ func _on_player_player_died() -> void:
 
 func coin_collected() -> void:
 	$CanvasLayer/GameOverlay.update_coin_count(Global.coin_count)
+	
+func traded() -> void:
+	$CanvasLayer/GameOverlay.update_coin_count(Global.coin_count)
+	$CanvasLayer/GameOverlay.update_wood_count(Global.wood_count)
