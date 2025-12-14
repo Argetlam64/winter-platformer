@@ -7,17 +7,29 @@ func _ready() -> void:
 	$CanvasLayer/GameOverlay.visible = true
 	var coins = get_tree().get_nodes_in_group("coins")
 	var traders = get_tree().get_nodes_in_group("trader")
+	var skeletons = get_tree().get_nodes_in_group("skeletons")
 	for coin in coins:
 		coin.picked_up_coin.connect(coin_collected)
 	
 	for trader in traders:
 		trader.traded_for_wood.connect(traded)
+	
+	for skeleton in skeletons:
+		skeleton.enemy_die.connect(enemy_killed)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
 
+func enemy_killed(pos: Vector2):
+	var coin_scene = preload("res://scenes/coin/coin.tscn")
+	for i in range(3):
+		var coin = coin_scene.instantiate() as Area2D
+		coin.start(pos)
+		coin.picked_up_coin.connect(coin_collected)
+		$Coins.add_child(coin)
+		await get_tree().create_timer(0.2).timeout
 
 func _on_player_player_damaged() -> void:
 	if "update_player_health" in $CanvasLayer/GameOverlay:

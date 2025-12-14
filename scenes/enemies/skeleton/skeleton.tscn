@@ -306,8 +306,8 @@ animations = [{
 "speed": 7.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i3wcf"]
-radius = 8.758919
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_me6e6"]
+size = Vector2(19.012112, 26.997784)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_me6e6"]
 radius = 84.0
@@ -338,7 +338,7 @@ _data = {
 &"attack": SubResource("Animation_me6e6")
 }
 
-[node name="Skeleton" type="CharacterBody2D"]
+[node name="Skeleton" type="CharacterBody2D" groups=["skeletons"]]
 collision_layer = 4
 script = ExtResource("1_me6e6")
 
@@ -349,10 +349,10 @@ frame = 12
 frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2.3841858e-07, 5.0000005)
+position = Vector2(-0.513179, 3.506596)
 rotation = -0.012851792
-scale = Vector2(0.9999997, 0.9999997)
-shape = SubResource("CapsuleShape2D_i3wcf")
+scale = Vector2(0.99999946, 0.99999946)
+shape = SubResource("RectangleShape2D_me6e6")
 
 [node name="DetectionArea" type="Area2D" parent="."]
 collision_layer = 0

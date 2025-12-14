@@ -8,6 +8,8 @@ var player_in_area = false
 var original_pos = position
 var health_points: int = 3
 
+signal enemy_die(pos: Vector2)
+
 
 func _physics_process(delta: float) -> void:
 	if !Global.playing:
@@ -27,7 +29,7 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite2D.flip_h = direction.x < 0
 		
 	if player:
-		var player_direction = (player.global_position - global_position).normalized()
+		#var player_direction = (player.global_position - global_position).normalized()
 		var dx = player.global_position.x - global_position.x
 		if abs(dx) > 6:
 			direction.x = sign(dx)
@@ -84,6 +86,7 @@ func skeleton_die():
 	$Timers/AttackTimer.stop()
 	$".".set_collision_layer_value(3, false)
 	$".".set_collision_mask_value(2, false)
+	emit_signal("enemy_die", global_position)
 	
 	
 
