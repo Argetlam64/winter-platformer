@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=4 uid="uid://cdmknbiwvgt"]
+[gd_scene load_steps=9 format=4 uid="uid://cdmknbiwvgt"]
 
-[ext_resource type="Script" path="res://scenes/world.gd" id="1_71j4m"]
+[ext_resource type="Script" uid="uid://jysaib40meg3" path="res://scenes/world.gd" id="1_71j4m"]
 [ext_resource type="TileSet" uid="uid://bhtybqqmxypek" path="res://tiles/tileset.tres" id="1_f3sb7"]
 [ext_resource type="PackedScene" uid="uid://d1unwglon012" path="res://scenes/enemies/skeleton/skeleton.tscn" id="2_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://cw5l3h3ncruh1" path="res://scenes/player/player.tscn" id="3_k0juu"]
 [ext_resource type="PackedScene" uid="uid://bf0ba7mx66gt8" path="res://scenes/game_overlay/overlay.tscn" id="4_k0juu"]
+[ext_resource type="PackedScene" uid="uid://styss4if42n7" path="res://scenes/trader/trader.tscn" id="6_4mrxx"]
 [ext_resource type="PackedScene" uid="uid://q8sihi7v4m2r" path="res://scenes/game_over_screen/game_over_screen.tscn" id="6_qfnet"]
-[ext_resource type="PackedScene" uid="uid://dlf5vswl2lcu4" path="res://scenes/wood/wood.tscn" id="7_i7141"]
+[ext_resource type="PackedScene" uid="uid://dlf5vswl2lcu4" path="res://scenes/coin/coin.tscn" id="7_i7141"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_71j4m")
@@ -22,25 +23,30 @@ scale = Vector2(1.5, 1.5)
 tile_map_data = PackedByteArray("AAAGAA0AAAAJAAcAAAAHAA0AAAAJAAcAAAAHAA4AAAAKAAQAAAAIAA0AAAAJAAcAAAAIAA4AAAAKAAQAAAAJAAwAAAAGAAYAAAAJAA0AAAALAAcAAAAJAA4AAAAKAAQAAAAKAAwAAAAJAAcAAAAKAA0AAAAIAAQAAAAKAA4AAAAFAAUAAAALAAwAAAAJAAcAAAALAA0AAAAKAAQAAAAMAAwAAAAJAAcAAAAMAA0AAAAKAAQAAAANAAwAAAAJAAcAAAANAA0AAAAKAAQAAAAOAAwAAAAJAAcAAAAOAA0AAAAKAAQAAAAPAAwAAAAJAAcAAAAPAA0AAAAKAAQAAAAQAAwAAAAJAAcAAAAQAA0AAAAKAAQAAAARAAwAAAAJAAcAAAARAA0AAAAKAAQAAAASAAwAAAAJAAcAAAASAA0AAAALAAQAAAASAA4AAAALAAYAAAASAA8AAAAGAAUAAAATAAwAAAAFAAYAAAATAA0AAAAIAAUAAAATAA4AAAAIAAcAAAATAA8AAAAKAAQAAAAUAAwAAQAGAAYAAAAUAA0AAQAGAAUAAAAUAA4AAAAJAAcAAAAUAA8AAAAKAAQAAAAVAAwAAQAJAAcAAAAVAA0AAQAKAAQAAAAVAA4AAAAVAAcAAAAVAA8AAAAKAAQAAAAWAAwAAQAJAAcAAAAWAA0AAQAKAAQAAAAWAA4AAAAVAAcAAAAWAA8AAAAWAAQAAAAXAAwAAQAJAAcAAAAXAA0AAQAKAAQAAAAXAA4AAAAVAAcAAAAXAA8AAAAWAAQAAAAYAAwAAQAFAAYAAAAYAA0AAQAFAAUAAAAYAA4AAQAJAAcAAAAYAA8AAQAKAAQAAAAZAAsAAQAGAAYAAAAZAAwAAQAGAAUAAAAZAA4AAQAJAB8AAAAZAA8AAQAKAAQAAAAaAAsAAQAJAAcAAAAaAAwAAQAKAAQAAAAbAAsAAQAJAAcAAAAbAAwAAQAKAAQAAAAbACEAAQASAAUAAAAcAAsAAQAJAAcAAAAcAAwAAQAKAAQAAAAcACAAAQAVAAcAAAAdAAsAAQAJAAcAAAAdAAwAAQAKAAQAAAAdACAAAQAVAAcAAAAeAAsAAQAJAAcAAAAeAAwAAQAKAAQAAAAeACAAAQARAAYAAAAeACEAAQARAAUAAAAfAAsAAQAJAAcAAAAfAAwAAQAKAAQAAAAgAAsAAQAJAAcAAAAgAAwAAQAKAAQAAAAhAAsAAQAJAAcAAAAhAAwAAQAKAAQAAAAiAAsAAQAJAAcAAAAiAAwAAQAKAAQAAAAkACAAAQASAAYAAAAkACEAAQASAAUAAAAlACAAAQAVAB8AAAAmACAAAQARAAYAAAAmACEAAQARAAUAAAApABsABAAAABQAAAAqABsABAABABQAAAApABoABAAAABMAAAAqABoABAABABMAAAApABkABAAAABIAAAAqABkABAABABIAAAAbACAAAQASAAYAAAAcAEoAAQASAAYAAAAcAEsAAQASAAUAAAAdAEoAAQAVAB8AAAAeAEoAAQARAAYAAAAeAEsAAQARAAUAAABMAAMABgAAAAsAAABNAAMABgABAAsAAABiAAkABgABAAsAAABhAAkABgAAAAsAAABQAAMABQAAABQAAABRAAMABQABABQAAABQAAIABQAAABMAAABRAAIABQABABMAAABQAAEABQAAABIAAABRAAEABQABABIAAABTAAMABAAAABQAAABUAAMABAABABQAAABTAAIABAAAABMAAABUAAIABAABABMAAABTAAEABAAAABIAAABUAAEABAABABIAAABJAAAAAwAHAAgAAABIAAAAAwAGAAgAAAAGAA4AAAAKAAQAAAAFAA0AAAAJAAcAAAAEAA0AAAAJAAcAAAADAA0AAAAJAAcAAAACAA0AAAAJAAcAAAABAA0AAAAJAAcAAAAAAA0AAAAJAAcAAAAFAA4AAAAKAAQAAAAEAA4AAAAKAAQAAAADAA4AAAAKAAQAAAACAA4AAAAKAAQAAAABAA4AAAAKAAQAAAAAAA4AAAAKAAQAAAA=")
 tile_set = ExtResource("1_f3sb7")
 
-[node name="Skeleton" parent="." instance=ExtResource("2_4wyf3")]
-position = Vector2(181.41098, 298.4591)
+[node name="Coins" type="Node2D" parent="."]
 
-[node name="Skeleton2" parent="." instance=ExtResource("2_4wyf3")]
-position = Vector2(545, 227)
-
-[node name="Wood" type="Node2D" parent="."]
-
-[node name="Wood2" parent="Wood" instance=ExtResource("7_i7141")]
+[node name="Coin1" parent="Coins" instance=ExtResource("7_i7141")]
 position = Vector2(263, 285)
 
-[node name="Wood3" parent="Wood" instance=ExtResource("7_i7141")]
+[node name="Coin2" parent="Coins" instance=ExtResource("7_i7141")]
 position = Vector2(332, 284)
 
-[node name="Wood4" parent="Wood" instance=ExtResource("7_i7141")]
+[node name="Coin3" parent="Coins" instance=ExtResource("7_i7141")]
 position = Vector2(415, 286)
 
 [node name="Player" parent="." instance=ExtResource("3_k0juu")]
 position = Vector2(123, 257)
+
+[node name="Skeletons" type="Node2D" parent="."]
+
+[node name="Skeleton" parent="Skeletons" instance=ExtResource("2_4wyf3")]
+position = Vector2(882.29065, 226.42271)
+
+[node name="Skeleton2" parent="Skeletons" instance=ExtResource("2_4wyf3")]
+position = Vector2(760.5323, 235.75285)
+
+[node name="Trader" parent="Skeletons" instance=ExtResource("6_4mrxx")]
+position = Vector2(549, 288)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -48,6 +54,7 @@ position = Vector2(123, 257)
 
 [node name="GameOverScreen" parent="CanvasLayer" instance=ExtResource("6_qfnet")]
 
+[connection signal="picked_up_coin" from="Coins/Coin1" to="." method="_on_wood_2_picked_up_coin"]
 [connection signal="player_damaged" from="Player" to="." method="_on_player_player_damaged"]
 [connection signal="player_died" from="Player" to="." method="_on_player_player_died"]
 [connection signal="update_wall_jump_count" from="Player" to="." method="_on_player_update_wall_jump_count"]

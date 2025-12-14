@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bf0ba7mx66gt8"]
+[gd_scene load_steps=5 format=3 uid="uid://bf0ba7mx66gt8"]
 
 [ext_resource type="Script" uid="uid://crcvbp3s6hgju" path="res://scenes/game_overlay/overlay.gd" id="1_yf2sk"]
 [ext_resource type="FontFile" uid="uid://cojsua2s34upb" path="res://textures/fonts/Better VCR 9.0.1.ttf" id="2_5f6ye"]
+[ext_resource type="Texture2D" uid="uid://ba77csrlje8ak" path="res://textures/Money one.png" id="3_wlswc"]
+[ext_resource type="Texture2D" uid="uid://d3gocrwfp01fu" path="res://textures/fb202.png" id="4_nit6v"]
 
 [node name="GameOverlay" type="Control"]
 layout_mode = 3
@@ -32,3 +34,60 @@ offset_bottom = 81.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_5f6ye")
 text = "Wall jumps: "
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_top = 90.0
+offset_right = 154.0
+offset_bottom = 165.0
+texture = ExtResource("3_wlswc")
+stretch_mode = 4
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 20.0
+offset_top = 160.0
+offset_right = 154.0
+offset_bottom = 209.0
+texture = ExtResource("4_nit6v")
+stretch_mode = 4
+
+[node name="CoinCount" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 60.0
+offset_top = 110.0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("2_5f6ye")
+theme_override_font_sizes/font_size = 25
+text = ": 0"
+
+[node name="WoodCount" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 60.0
+offset_top = 160.0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("2_5f6ye")
+theme_override_font_sizes/font_size = 25
+text = ": 0"
+
+[node name="ControlsLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 23.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("2_5f6ye")
+text = "Interact: F
+Jump: Space
+Attack: E
+Move: WASD"

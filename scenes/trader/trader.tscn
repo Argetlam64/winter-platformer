@@ -1,0 +1,117 @@
+[gd_scene load_steps=17 format=3 uid="uid://styss4if42n7"]
+
+[ext_resource type="Texture2D" uid="uid://dbfv5y3kerw1g" path="res://textures/enemies/Skeleton Mage.png" id="1_bpfcs"]
+[ext_resource type="Script" uid="uid://ogvq7omvd47g" path="res://scenes/trader/trader.gd" id="1_icvyf"]
+[ext_resource type="Texture2D" uid="uid://bitxgdmehkqpn" path="res://textures/HUD.png" id="3_4ywav"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bpfcs"]
+radius = 42.0119
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_icvyf"]
+atlas = ExtResource("1_bpfcs")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ywav"]
+atlas = ExtResource("1_bpfcs")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cb75q"]
+atlas = ExtResource("1_bpfcs")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u8t45"]
+atlas = ExtResource("1_bpfcs")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twybw"]
+atlas = ExtResource("1_bpfcs")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tlld8"]
+atlas = ExtResource("1_bpfcs")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrkpb"]
+atlas = ExtResource("1_bpfcs")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lr3p1"]
+atlas = ExtResource("1_bpfcs")
+region = Rect2(336, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q2vvk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_icvyf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ywav")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cb75q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u8t45")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twybw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tlld8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xrkpb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lr3p1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6dwpc"]
+atlas = ExtResource("3_4ywav")
+region = Rect2(176, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_axbok"]
+atlas = ExtResource("3_4ywav")
+region = Rect2(176, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cb75q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6dwpc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_axbok")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Trader" type="Area2D" groups=["trader"]]
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("1_icvyf")
+
+[node name="Area2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_bpfcs")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_q2vvk")
+autoplay = "default"
+frame_progress = 0.46698546
+flip_h = true
+
+[node name="WoodArrow" type="AnimatedSprite2D" parent="."]
+position = Vector2(3, -24)
+scale = Vector2(1.5625, 1.375)
+sprite_frames = SubResource("SpriteFrames_cb75q")
+autoplay = "default"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
