@@ -11,6 +11,8 @@ func start() -> void:
 func back_to_game():
 	Global.player_health = Global.max_player_health
 	Global.wood_count = 0
+	Global.coin_count = 0
+	Global.frost = 0
 	get_tree().change_scene_to_file("res://scenes/world.tscn")
 
 func _process(_delta: float) -> void:

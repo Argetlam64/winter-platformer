@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://cw5l3h3ncruh1"]
+[gd_scene load_steps=60 format=3 uid="uid://cw5l3h3ncruh1"]
 
 [ext_resource type="Texture2D" uid="uid://dx68yssbebvas" path="res://textures/character/Battlemage Fantasy Character/Battlemage Complete (Sprite Sheet)/Idle/Battlemage Idle.png" id="1_dovo2"]
 [ext_resource type="Script" uid="uid://b06eg6hgptrpo" path="res://scenes/player/player.gd" id="1_gmlin"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://m4od6p0mtpgr" path="res://textures/character/Battlemage Fantasy Character/Battlemage Complete (Sprite Sheet)/Jump Foward/Going Down/Jump Foward Going Down.png" id="2_p47bc"]
 [ext_resource type="Texture2D" uid="uid://cfg0o55ufecd8" path="res://textures/character/Battlemage Fantasy Character/Battlemage Complete (Sprite Sheet)/Death/Battlemage Death.png" id="3_0owmy"]
 [ext_resource type="Texture2D" uid="uid://c6i8v8ndsi5cm" path="res://textures/character/Battlemage Fantasy Character/Battlemage Complete (Sprite Sheet)/Jump Foward/Going Up/Jump Foward Going Up.png" id="4_75vfm"]
+[ext_resource type="Texture2D" uid="uid://1i5yadab1bkf" path="res://textures/player_light.png" id="8_qek5x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uniwh"]
 atlas = ExtResource("2_75vfm")
@@ -425,6 +426,12 @@ shape = SubResource("RectangleShape2D_0owmy")
 libraries = {
 &"": SubResource("AnimationLibrary_0owmy")
 }
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0.6218831, 0.2757131, 0.12260232, 1)
+energy = 2.0
+texture = ExtResource("8_qek5x")
+texture_scale = 31.0
 
 [connection signal="animation_finished" from="SpriteAnimation" to="." method="_on_sprite_animation_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
