@@ -13,6 +13,8 @@ signal player_damaged
 signal update_wall_jump_count(count: int)
 
 func _physics_process(delta: float) -> void:
+	if !Global.playing:
+		return 
 	#can't cancel attacking
 	if is_attacking or !alive:
 		return

@@ -10,3 +10,6 @@ var player_health: int = max_player_health
 var wood_count: int = 0
 var coin_count: int = 0
 var frost: int = 0
+var time_taken: int = 0
+
+var playing = true

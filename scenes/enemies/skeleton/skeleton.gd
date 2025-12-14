@@ -10,7 +10,9 @@ var health_points: int = 3
 
 
 func _physics_process(delta: float) -> void:
-
+	if !Global.playing:
+		return 
+		
 	velocity = Vector2(0, velocity.y)
 	if not is_on_floor():
 		velocity += get_gravity() * delta
