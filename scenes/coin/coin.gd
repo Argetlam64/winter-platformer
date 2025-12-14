@@ -18,8 +18,9 @@ func _process(_delta: float) -> void:
 
 
 func _on_body_entered(_body: Node2D) -> void:
-	set_item_visible(true)
+	#set_item_visible(true)
 	available = true
+	pickup()
 
 
 func _on_body_exited(_body: Node2D) -> void:
