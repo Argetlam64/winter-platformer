@@ -93,13 +93,13 @@ func skeleton_die():
 func reduce_hp():
 	flash_skeleton()
 	health_points -= 1
-	print("Lost hp, " + str(health_points) + " left.")
+	#print("Lost hp, " + str(health_points) + " left.")
 	if health_points <= 0:
 		skeleton_die()
 		
 func hit_player():
-	print("Hit player called")
+	#print("Hit player called")
 	if player_in_area:
-		print("Player in area")
-		if "damage_player" in player:
+		#print("Player in area")
+		if "damage_player" in player and health_points > 0:
 			player.damage_player()

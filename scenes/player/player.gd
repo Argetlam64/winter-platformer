@@ -117,6 +117,7 @@ func flash_player():
 func damage_player():
 	if Global.player_health <= 0:
 		return
+	
 		
 	Global.player_health -= 1
 	emit_signal("player_damaged")
