@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://cdmknbiwvgt"]
+[gd_scene load_steps=17 format=4 uid="uid://cdmknbiwvgt"]
 
 [ext_resource type="Script" uid="uid://jysaib40meg3" path="res://scenes/world.gd" id="1_71j4m"]
 [ext_resource type="TileSet" uid="uid://bhtybqqmxypek" path="res://tiles/tileset.tres" id="1_f3sb7"]
@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://b50mycp8wrsvw" path="res://scenes/fire/fire.tscn" id="9_7r4gi"]
 [ext_resource type="Texture2D" uid="uid://cqjd0tjqp221q" path="res://textures/fog.png" id="11_e3hyu"]
 [ext_resource type="Texture2D" uid="uid://dworb1v7frylr" path="res://textures/Black.png" id="12_q5onr"]
+[ext_resource type="Texture2D" uid="uid://c8uujm2a7g1cy" path="res://textures/snow.png" id="13_o8fc1"]
+[ext_resource type="Texture2D" uid="uid://ctgalbs2diydy" path="res://textures/snow_2.png" id="14_xo05s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e3hyu"]
 size = Vector2(133, 861)
@@ -487,6 +489,26 @@ texture = ExtResource("11_e3hyu")
 show_behind_parent = true
 position = Vector2(1050, 14)
 texture = ExtResource("11_e3hyu")
+
+[node name="Snow" type="Node" parent="Fog"]
+
+[node name="Snow 1" type="Sprite2D" parent="Fog/Snow"]
+show_behind_parent = true
+position = Vector2(2748, 44)
+texture = ExtResource("13_o8fc1")
+offset = Vector2(30, 40)
+
+[node name="Snow 2" type="Sprite2D" parent="Fog/Snow"]
+show_behind_parent = true
+position = Vector2(2017, 50)
+texture = ExtResource("13_o8fc1")
+offset = Vector2(30, 40)
+
+[node name="SnowSnow1" type="Sprite2D" parent="Fog/Snow"]
+show_behind_parent = true
+position = Vector2(2531, 179)
+scale = Vector2(0.52038044, 0.49759614)
+texture = ExtResource("14_xo05s")
 
 [connection signal="picked_up_coin" from="Coins/Coin1" to="." method="_on_wood_2_picked_up_coin"]
 [connection signal="picked_up_coin" from="Coins/Coin11" to="." method="_on_wood_2_picked_up_coin"]
