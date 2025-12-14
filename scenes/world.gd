@@ -46,6 +46,7 @@ func traded() -> void:
 
 func _on_frost_timer_timeout() -> void:
 	Global.frost += 1
+	Global.time_taken += 1
 	$CanvasLayer/GameOverlay.update_frost(Global.frost)
 	$Player.change_frost_radius(Global.frost)
 	if Global.frost >= Global.max_frost:
@@ -53,7 +54,10 @@ func _on_frost_timer_timeout() -> void:
 
 
 func _on_fire_fire_lit() -> void:
-	for i in range(Global.max_frost * 5):
+	Global.playing = false
+	$CanvasLayer/WinScreen.start()
+	
+	for i in range(Global.max_frost * 5):	
 		Global.frost -= 1
 		await get_tree().create_timer(0.1).timeout
 		$CanvasLayer/GameOverlay.update_frost(Global.frost)

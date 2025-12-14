@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://cdmknbiwvgt"]
+[gd_scene load_steps=11 format=4 uid="uid://cdmknbiwvgt"]
 
 [ext_resource type="Script" uid="uid://jysaib40meg3" path="res://scenes/world.gd" id="1_71j4m"]
 [ext_resource type="TileSet" uid="uid://bhtybqqmxypek" path="res://tiles/tileset.tres" id="1_f3sb7"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://styss4if42n7" path="res://scenes/trader/trader.tscn" id="6_4mrxx"]
 [ext_resource type="PackedScene" uid="uid://q8sihi7v4m2r" path="res://scenes/game_over_screen/game_over_screen.tscn" id="6_qfnet"]
 [ext_resource type="PackedScene" uid="uid://dlf5vswl2lcu4" path="res://scenes/coin/coin.tscn" id="7_i7141"]
+[ext_resource type="PackedScene" uid="uid://cth21gb7qtfsq" path="res://scenes/win_screen/win_screen.tscn" id="8_w7kh3"]
 [ext_resource type="PackedScene" uid="uid://b50mycp8wrsvw" path="res://scenes/fire/fire.tscn" id="9_7r4gi"]
 
 [node name="Node2D" type="Node2D"]
@@ -77,6 +78,9 @@ position = Vector2(194.4711, 300.37115)
 position = Vector2(123, 257)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="WinScreen" parent="CanvasLayer" instance=ExtResource("8_w7kh3")]
+visible = false
 
 [node name="GameOverlay" parent="CanvasLayer" instance=ExtResource("4_k0juu")]
 visible = false

@@ -21,7 +21,7 @@ func _ready() -> void:
 	show_overlay(false)
 
 func _process(_delta: float) -> void:
-	if Global.wood_count >= Global.required_wood and Input.is_action_just_pressed("interact"):
+	if Global.wood_count >= Global.required_wood and Input.is_action_just_pressed("interact") and available:
 		$Sprite2D.play("lit")
 		emit_signal("fire_lit")
 
