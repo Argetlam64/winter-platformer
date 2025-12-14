@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://dlf5vswl2lcu4"]
+[gd_scene load_steps=16 format=3 uid="uid://dlf5vswl2lcu4"]
 
 [ext_resource type="Texture2D" uid="uid://csosxwykydrmw" path="res://textures/Money.png" id="1_8xqtt"]
 [ext_resource type="Script" uid="uid://c3geol2vhwbdr" path="res://scenes/wood/wood.gd" id="1_qcha5"]
 [ext_resource type="Texture2D" uid="uid://bitxgdmehkqpn" path="res://textures/HUD.png" id="2_vrqvt"]
+[ext_resource type="FontFile" uid="uid://cojsua2s34upb" path="res://textures/fonts/Better VCR 9.0.1.ttf" id="4_kubfs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8xqtt"]
 radius = 16.0
@@ -92,13 +93,23 @@ position = Vector2(-2.3841858e-07, -1.1920929e-07)
 scale = Vector2(1.9375, 1.9375)
 sprite_frames = SubResource("SpriteFrames_iam0m")
 autoplay = "default"
-frame_progress = 0.34586477
+frame_progress = 0.10196621
 
 [node name="WoodArrow" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -22)
 scale = Vector2(1.5625, 1.375)
 sprite_frames = SubResource("SpriteFrames_tuwe5")
 autoplay = "default"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="WoodArrow"]
+
+[node name="Label" type="Label" parent="WoodArrow/CanvasLayer"]
+offset_left = -6.0
+offset_top = -50.0
+offset_right = 34.0
+offset_bottom = -27.0
+theme_override_fonts/font = ExtResource("4_kubfs")
+text = "X"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
