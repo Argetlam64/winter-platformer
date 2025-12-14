@@ -91,6 +91,7 @@ theme_override_fonts/font = ExtResource("2_5f6ye")
 text = "Interact: E
 Jump: Space
 Attack: F
+Dash: SHIFT
 Move: WASD"
 
 [node name="FrostBar" type="ProgressBar" parent="."]
