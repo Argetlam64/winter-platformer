@@ -28,7 +28,7 @@ func trade_for_wood():
 	if Global.coin_count > 0:
 		for i in range(Global.coin_count):
 			throw_wood()
-			await get_tree().create_timer(0.3).timeout
+			await get_tree().create_timer(0.2).timeout
 			
 		Global.wood_count += Global.coin_count
 		Global.coin_count = 0
