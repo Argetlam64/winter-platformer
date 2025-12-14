@@ -1,8 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://84jplcv3gk2a"]
+[gd_scene load_steps=9 format=4 uid="uid://84jplcv3gk2a"]
 
 [ext_resource type="TileSet" uid="uid://bhtybqqmxypek" path="res://tiles/tileset.tres" id="1_3263u"]
 [ext_resource type="PackedScene" uid="uid://d1unwglon012" path="res://scenes/enemies/skeleton/skeleton.tscn" id="2_umbte"]
-[ext_resource type="PackedScene" uid="uid://b3htlgk0wac2r" path="res://scenes/entities/slime.tscn" id="3_ynswa"]
+[ext_resource type="PackedScene" uid="uid://cw5l3h3ncruh1" path="res://scenes/player/player.tscn" id="3_dvny0"]
+[ext_resource type="PackedScene" uid="uid://styss4if42n7" path="res://scenes/trader/trader.tscn" id="4_xwrkq"]
+[ext_resource type="PackedScene" uid="uid://dlf5vswl2lcu4" path="res://scenes/coin/coin.tscn" id="5_nrstc"]
+[ext_resource type="PackedScene" uid="uid://b50mycp8wrsvw" path="res://scenes/fire/fire.tscn" id="6_7448y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4wyf3"]
 size = Vector2(20, 294)
@@ -38,5 +41,20 @@ shape = SubResource("RectangleShape2D_4wyf3")
 position = Vector2(693, 239)
 shape = SubResource("RectangleShape2D_k0juu")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("3_ynswa")]
-position = Vector2(149, 236)
+[node name="Player" parent="." instance=ExtResource("3_dvny0")]
+position = Vector2(57, 295)
+
+[node name="Trader" parent="." instance=ExtResource("4_xwrkq")]
+position = Vector2(177, 279)
+
+[node name="Wood" parent="." instance=ExtResource("5_nrstc")]
+position = Vector2(114, 277)
+
+[node name="Wood2" parent="." instance=ExtResource("5_nrstc")]
+position = Vector2(74, 269)
+
+[node name="Wood3" parent="." instance=ExtResource("5_nrstc")]
+position = Vector2(27, 316)
+
+[node name="Fire" parent="." instance=ExtResource("6_7448y")]
+position = Vector2(291, 278)

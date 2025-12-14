@@ -362,8 +362,9 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_75vfm"]
-size = Vector2(17, 27.75)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qek5x"]
+radius = 6.5
+height = 27.25
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0owmy"]
 size = Vector2(47, 26)
@@ -397,7 +398,7 @@ _data = {
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
-collision_mask = 21
+collision_mask = 17
 script = ExtResource("1_gmlin")
 
 [node name="SpriteAnimation" type="AnimatedSprite2D" parent="."]
@@ -408,7 +409,7 @@ autoplay = "idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 11.1)
 scale = Vector2(1, 0.8)
-shape = SubResource("RectangleShape2D_75vfm")
+shape = SubResource("CapsuleShape2D_qek5x")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.5, 2.5)

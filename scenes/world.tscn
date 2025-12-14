@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://q8sihi7v4m2r" path="res://scenes/game_over_screen/game_over_screen.tscn" id="6_qfnet"]
 [ext_resource type="PackedScene" uid="uid://dlf5vswl2lcu4" path="res://scenes/coin/coin.tscn" id="7_i7141"]
 [ext_resource type="PackedScene" uid="uid://cth21gb7qtfsq" path="res://scenes/win_screen/win_screen.tscn" id="8_w7kh3"]
-[ext_resource type="PackedScene" uid="uid://b50mycp8wrsvw" path="res://scenes/title_screen/fire/fire_title_screen.tscn" id="9_7r4gi"]
+[ext_resource type="PackedScene" uid="uid://b50mycp8wrsvw" path="res://scenes/fire/fire.tscn" id="9_7r4gi"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_71j4m")
@@ -348,7 +348,7 @@ position = Vector2(977.4131, 178.22992)
 position = Vector2(882.29065, 226.42271)
 
 [node name="Skeleton2" parent="Skeletons" instance=ExtResource("2_4wyf3")]
-position = Vector2(760.5323, 235.75285)
+position = Vector2(189.48492, 300.91022)
 
 [node name="Skeleton3" parent="Skeletons" instance=ExtResource("2_4wyf3")]
 position = Vector2(769.54553, 567.9091)
@@ -393,7 +393,7 @@ position = Vector2(2780.0305, 1725.3289)
 position = Vector2(2330.7632, 218.53668)
 
 [node name="Player" parent="." instance=ExtResource("3_k0juu")]
-position = Vector2(123, 257)
+position = Vector2(39.107468, 303.03305)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
