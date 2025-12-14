@@ -28,14 +28,14 @@ func _physics_process(delta: float) -> void:
 		
 	if player:
 		var player_direction = (player.global_position - global_position).normalized()
-		if player_direction.x > 0:
-			direction = Vector2(1, 0)
+		var dx = player.global_position.x - global_position.x
+		if abs(dx) > 6:
+			direction.x = sign(dx)
 			$AnimatedSprite2D.play("walking")
 		else:
-			direction = Vector2(-1, 0)
-			$AnimatedSprite2D.play("walking")
+			direction.x = 0
 			
-		velocity = direction * speed
+		velocity.x = direction.x * speed
 	else:
 		$AnimatedSprite2D.play("idle")
 		
