@@ -29,6 +29,7 @@ func update_wood_count(val: int):
 
 func update_frost(val: int) -> void:
 	$FrostBar.value = val
+	$ColdLabel.text = "Cold: " + str(round((float(Global.frost) / float(Global.max_frost) * 100))) + "%"
 	
 func update_dash(val: int) -> void:
 	$DashLabel.text = "Dash count: " + str(val)
