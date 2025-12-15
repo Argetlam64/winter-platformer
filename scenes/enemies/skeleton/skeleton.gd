@@ -51,6 +51,7 @@ func _on_detection_area_body_entered(body: Node2D) -> void:
 	
 	
 func attack():
+	
 	$AnimatedSprite2D.play("attack")
 	attacking = true
 	$AnimationPlayer.play("attack")
@@ -98,6 +99,7 @@ func reduce_hp():
 		skeleton_die()
 		
 func hit_player():
+	$Sounds/Slash.play()
 	#print("Hit player called")
 	if player_in_area:
 		#print("Player in area")

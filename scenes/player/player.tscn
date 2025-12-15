@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://cw5l3h3ncruh1"]
+[gd_scene load_steps=74 format=3 uid="uid://cw5l3h3ncruh1"]
 
 [ext_resource type="Texture2D" uid="uid://dx68yssbebvas" path="res://textures/character/Battlemage Fantasy Character/Battlemage Complete (Sprite Sheet)/Idle/Battlemage Idle.png" id="1_dovo2"]
 [ext_resource type="Script" uid="uid://b06eg6hgptrpo" path="res://scenes/player/player.gd" id="1_gmlin"]
@@ -11,6 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://1i5yadab1bkf" path="res://textures/player_light.png" id="8_qek5x"]
 [ext_resource type="AudioStream" uid="uid://bw2qafykq86rh" path="res://sounds/player_damaged.wav" id="10_h17s1"]
 [ext_resource type="AudioStream" uid="uid://bx5keu0ka7o7x" path="res://sounds/background_music.ogg" id="11_je7p5"]
+[ext_resource type="AudioStream" uid="uid://ceksq74ao1273" path="res://sounds/dash.wav" id="12_fm80t"]
+[ext_resource type="AudioStream" uid="uid://4awigxnol03v" path="res://sounds/player_slash.wav" id="13_gx1jg"]
+[ext_resource type="AudioStream" uid="uid://csdm1165ob7pq" path="res://sounds/hoppp.wav" id="14_ugbui"]
+[ext_resource type="AudioStream" uid="uid://k41xdedvslxh" path="res://sounds/player_jump.wav" id="15_fcs02"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uniwh"]
 atlas = ExtResource("2_75vfm")
@@ -511,6 +515,18 @@ stream = ExtResource("10_h17s1")
 [node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource("11_je7p5")
 autoplay = true
+
+[node name="Dash" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("12_fm80t")
+
+[node name="Slash" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("13_gx1jg")
+
+[node name="Hopp" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("14_ugbui")
+
+[node name="Jump" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("15_fcs02")
 
 [connection signal="animation_finished" from="SpriteAnimation" to="." method="_on_sprite_animation_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

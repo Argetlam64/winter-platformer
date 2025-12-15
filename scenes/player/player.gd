@@ -24,6 +24,7 @@ func start_dash():
 	is_dashing = true
 	if Global.dash_count > 0:
 		Global.dash_count -= 1
+		$Sounds/Dash.play()
 		emit_signal("update_dash_count")
 		if Global.dash_count <= 0:
 			can_dash = false
@@ -70,8 +71,10 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		$SpriteAnimation.play("jump_up")
+		$Sounds/Jump.play()
 	
 	elif Input.is_action_just_pressed("jump") and is_on_wall() and current_wall_jumps > 0:
+		$Sounds/Jump.play()
 		current_wall_jumps -= 1
 		velocity.y = JUMP_VELOCITY
 		$SpriteAnimation.play("jump_up")
@@ -80,6 +83,7 @@ func _physics_process(delta: float) -> void:
 		# Handle jump.
 	if is_on_floor():	
 		if Input.is_action_just_pressed("attack"):
+			$Sounds/Slash.play()
 			$SpriteAnimation.play("attack")
 			$AnimationPlayer.play("attack")
 			is_attacking = true
@@ -143,7 +147,6 @@ func change_frost_radius(val: float):
 		$PointLight2D.texture_scale = new_radius
 		#print("New radius:" + str(new_radius))
 	
-
 
 func _on_dash_timer_timeout() -> void:
 	is_dashing = false
