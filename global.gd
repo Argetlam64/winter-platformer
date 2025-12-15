@@ -12,5 +12,6 @@ var wood_count: int = 0
 var coin_count: int = 0
 var frost: int = 0
 var time_taken: int = 0
+var pause = false
 
 var playing = true

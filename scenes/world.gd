@@ -1,10 +1,10 @@
 extends Node2D
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$CanvasLayer/GameOverScreen.visible = false
 	$CanvasLayer/GameOverlay.visible = true
+	$CanvasLayer/PauseOverlay.visible = false
 	var coins = get_tree().get_nodes_in_group("coins")
 	var traders = get_tree().get_nodes_in_group("trader")
 	var skeletons = get_tree().get_nodes_in_group("skeletons")
@@ -17,10 +17,15 @@ func _ready() -> void:
 	for skeleton in skeletons:
 		skeleton.enemy_die.connect(enemy_killed)
 
+func pause_toggle():
+	Global.pause = !Global.pause
+	Global.playing = !Global.playing
+	$CanvasLayer/PauseOverlay.visible = Global.pause
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	pass
+	if Input.is_action_just_pressed("pause"):
+		pause_toggle()
 
 func enemy_killed(pos: Vector2):
 	var coin_scene = preload("res://scenes/coin/coin.tscn")
