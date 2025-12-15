@@ -7,6 +7,8 @@ const max_player_light_scale = 10
 const required_wood: int = 100
 const heart_drop_chance: float = 1#0.8
 const max_dash_count = 2
+const skeleton_health: int = 2
+const skeleton_speed: int = 40
 
 var player_health: int = max_player_health
 var wood_count: int = 0
