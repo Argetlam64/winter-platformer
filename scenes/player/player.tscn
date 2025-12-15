@@ -418,7 +418,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hdvrm")
 }],
-"loop": true,
+"loop": false,
 "name": &"jump_attack",
 "speed": 10.0
 }, {
