@@ -23,5 +23,5 @@ func _on_death_timer_timeout() -> void:
 
 func _on_blink_timer_timeout() -> void:
 	$ContinueLabel.visible = !$ContinueLabel.visible
-	print("Visible: " + str($ContinueLabel.visible))
+	#print("Visible: " + str($ContinueLabel.visible))
 	$Node2D/BlinkTimer.start()

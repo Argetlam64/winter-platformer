@@ -46,7 +46,7 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_detection_area_body_entered(body: Node2D) -> void:
-	print("Detected player")
+	#print("Detected player")
 	player = body as CharacterBody2D
 	
 	

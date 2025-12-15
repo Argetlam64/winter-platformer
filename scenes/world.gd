@@ -26,6 +26,10 @@ func pause_toggle():
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("pause"):
 		pause_toggle()
+	elif Input.is_action_just_pressed("restart") and Global.pause:
+		call_deferred("restart_game")
+	elif Input.is_action_just_pressed("quit") and Global.pause:
+		get_tree().quit()
 
 func enemy_killed(pos: Vector2):
 	var coin_scene = preload("res://scenes/coin/coin.tscn")
@@ -97,3 +101,7 @@ func _on_fire_fire_lit() -> void:
 
 func _on_player_update_dash_count() -> void:
 	$CanvasLayer/GameOverlay.update_dash(Global.dash_count)
+	
+func restart_game():
+	Global.reset_global_state()
+	get_tree().change_scene_to_file("res://scenes/world.tscn")

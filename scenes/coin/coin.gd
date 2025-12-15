@@ -41,5 +41,5 @@ func pickup():
 
 func destroy():
 	queue_free()
-	print("Coin picked up")
+	#print("Coin picked up")
 	
