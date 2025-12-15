@@ -88,7 +88,8 @@ offset_right = -20.0
 offset_bottom = 23.0
 grow_horizontal = 0
 theme_override_fonts/font = ExtResource("2_5f6ye")
-text = "Interact: E
+text = "Pause: ESC
+Interact: E
 Jump: Space
 Attack: F
 Dash: SHIFT

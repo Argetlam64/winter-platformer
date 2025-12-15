@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://cdmknbiwvgt"]
+[gd_scene load_steps=17 format=4 uid="uid://cdmknbiwvgt"]
 
 [ext_resource type="Script" uid="uid://jysaib40meg3" path="res://scenes/world.gd" id="1_71j4m"]
 [ext_resource type="TileSet" uid="uid://bhtybqqmxypek" path="res://tiles/tileset.tres" id="1_f3sb7"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cth21gb7qtfsq" path="res://scenes/win_screen/win_screen.tscn" id="8_w7kh3"]
 [ext_resource type="PackedScene" uid="uid://b50mycp8wrsvw" path="res://scenes/fire/fire.tscn" id="9_7r4gi"]
 [ext_resource type="Texture2D" uid="uid://dwv4acudhi87g" path="res://textures/total-black-background-fo8bu4xz44tqguzu.webp" id="11_e3hyu"]
+[ext_resource type="PackedScene" uid="uid://dd2mpn6qy7w5e" path="res://scenes/pause_overlay/pause_overlay.tscn" id="11_xo05s"]
 [ext_resource type="Texture2D" uid="uid://dworb1v7frylr" path="res://textures/Posnetek zaslona 2025-12-14 214219.png" id="12_q5onr"]
 [ext_resource type="Texture2D" uid="uid://cqjd0tjqp221q" path="res://textures/fog.png" id="13_jhx03"]
 [ext_resource type="Texture2D" uid="uid://c8uujm2a7g1cy" path="res://textures/snow.png" id="14_o8fc1"]
@@ -411,6 +412,9 @@ visible = false
 visible = false
 
 [node name="GameOverScreen" parent="CanvasLayer" instance=ExtResource("6_qfnet")]
+visible = false
+
+[node name="PauseOverlay" parent="CanvasLayer" instance=ExtResource("11_xo05s")]
 visible = false
 
 [node name="Timers" type="Node2D" parent="."]
