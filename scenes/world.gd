@@ -57,19 +57,20 @@ func traded() -> void:
 
 
 func _on_frost_timer_timeout() -> void:
-	Global.frost += 1
-	Global.time_taken += 1
-	$CanvasLayer/GameOverlay.update_frost(Global.frost)
-	$Player.change_frost_radius(Global.frost)
-	if Global.frost >= Global.max_frost:
-		$Player.damage_player()
+	if Global.playing:
+		Global.frost += 1
+		Global.time_taken += 1
+		$CanvasLayer/GameOverlay.update_frost(Global.frost)
+		$Player.change_frost_radius(Global.frost)
+		if Global.frost >= Global.max_frost:
+			$Player.damage_player()
 
 
 func _on_fire_fire_lit() -> void:
 	Global.playing = false
 	$CanvasLayer/WinScreen.start()
 	
-	for i in range(Global.max_frost * 5):	
+	while Global.frost > 0:	
 		Global.frost -= 1
 		await get_tree().create_timer(0.1).timeout
 		$CanvasLayer/GameOverlay.update_frost(Global.frost)
