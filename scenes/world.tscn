@@ -660,7 +660,7 @@ tile_set = ExtResource("1_f3sb7")
 [node name="Torches" type="Node2D" parent="."]
 
 [node name="Torch" parent="Torches" instance=ExtResource("3_dss4m")]
-position = Vector2(887.4545, 563.1818)
+position = Vector2(894.37946, 552.3758)
 
 [node name="Torch2" parent="Torches" instance=ExtResource("3_dss4m")]
 position = Vector2(1043.8181, 605.90906)
@@ -675,55 +675,55 @@ position = Vector2(628.0823, 641.3397)
 position = Vector2(461.70724, 558.81775)
 
 [node name="Torch6" parent="Torches" instance=ExtResource("3_dss4m")]
-position = Vector2(313.96622, 557.4867)
+position = Vector2(295.77618, 573.33496)
 
 [node name="Torch7" parent="Torches" instance=ExtResource("3_dss4m")]
-position = Vector2(190.1832, 707.8898)
+position = Vector2(195.13983, 710.0922)
 
 [node name="Torch8" parent="Torches" instance=ExtResource("3_dss4m")]
-position = Vector2(216.80319, 923.5118)
+position = Vector2(215.54115, 932.58826)
 
 [node name="Torch9" parent="Torches" instance=ExtResource("3_dss4m")]
-position = Vector2(429.7632, 972.7587)
+position = Vector2(421.13617, 975.9381)
 
 [node name="Torch10" parent="Torches" instance=ExtResource("3_dss4m")]
-position = Vector2(610.7793, 927.50476)
+position = Vector2(597.78503, 940.889)
 
 [node name="Torch11" parent="Torches" instance=ExtResource("3_dss4m")]
-position = Vector2(762.5132, 863.61676)
+position = Vector2(771.3962, 866.8185)
 
 [node name="Torch12" parent="Torches" instance=ExtResource("3_dss4m")]
-position = Vector2(685.3152, 746.4888)
+position = Vector2(696.8578, 754.894)
 
 [node name="Torch13" parent="Torches" instance=ExtResource("3_dss4m")]
-position = Vector2(506.9612, 775.77075)
+position = Vector2(515.302, 785.18494)
 
 [node name="Torch14" parent="Torches" instance=ExtResource("3_dss4m")]
-position = Vector2(344.5792, 813.03876)
+position = Vector2(345.79025, 834.4666)
 
 [node name="Torch15" parent="Torches" instance=ExtResource("3_dss4m")]
-position = Vector2(367.2062, 723.86176)
+position = Vector2(342.71622, 749.0088)
 
 [node name="Torch16" parent="Torches" instance=ExtResource("3_dss4m")]
 position = Vector2(875.6482, 762.46075)
 
 [node name="Torch17" parent="Torches" instance=ExtResource("3_dss4m")]
-position = Vector2(1050.0093, 829.01074)
+position = Vector2(1029.6868, 761.7636)
 
 [node name="Torch18" parent="Torches" instance=ExtResource("3_dss4m")]
 position = Vector2(1167.1372, 819.6937)
 
 [node name="Torch19" parent="Torches" instance=ExtResource("3_dss4m")]
-position = Vector2(1211.0603, 706.5587)
+position = Vector2(1216.5724, 709.74133)
 
 [node name="Torch20" parent="Torches" instance=ExtResource("3_dss4m")]
-position = Vector2(1272.2863, 577.4517)
+position = Vector2(1275.0714, 592.1508)
 
 [node name="Torch21" parent="Torches" instance=ExtResource("3_dss4m")]
 position = Vector2(1341.4983, 508.23972)
 
 [node name="Torch22" parent="Torches" instance=ExtResource("3_dss4m")]
-position = Vector2(1462.6193, 464.3167)
+position = Vector2(1476.0681, 480.0863)
 
 [node name="Torch23" parent="Torches" instance=ExtResource("3_dss4m")]
 position = Vector2(1103.8038, 922.2345)
@@ -744,7 +744,7 @@ position = Vector2(633.66705, 1125.7075)
 position = Vector2(488.46707, 1212.6074)
 
 [node name="Torch29" parent="Torches" instance=ExtResource("3_dss4m")]
-position = Vector2(385.06708, 1258.8075)
+position = Vector2(399.75018, 1267.0317)
 
 [node name="Torch30" parent="Torches" instance=ExtResource("3_dss4m")]
 position = Vector2(267.36707, 1243.4075)
@@ -756,13 +756,13 @@ position = Vector2(832.7671, 1258.8075)
 position = Vector2(678, 1402)
 
 [node name="Torch33" parent="Torches" instance=ExtResource("3_dss4m")]
-position = Vector2(502, 1412)
+position = Vector2(517.26733, 1409.8833)
 
 [node name="Torch34" parent="Torches" instance=ExtResource("3_dss4m")]
 position = Vector2(305, 1442)
 
 [node name="Torch35" parent="Torches" instance=ExtResource("3_dss4m")]
-position = Vector2(344.55023, 1582.2135)
+position = Vector2(325.09012, 1600.9451)
 
 [node name="Torch36" parent="Torches" instance=ExtResource("3_dss4m")]
 position = Vector2(1004.7263, 1278.7455)
@@ -777,10 +777,10 @@ position = Vector2(1183.0803, 1071.1095)
 position = Vector2(1060.7563, 1384.0853)
 
 [node name="Torch40" parent="Torches" instance=ExtResource("3_dss4m")]
-position = Vector2(918.04407, 1492.6089)
+position = Vector2(934.3154, 1483.4014)
 
 [node name="Torch41" parent="Torches" instance=ExtResource("3_dss4m")]
-position = Vector2(823.54297, 1583.117)
+position = Vector2(804.8853, 1547.6249)
 
 [node name="Torch42" parent="Torches" instance=ExtResource("3_dss4m")]
 position = Vector2(674.47095, 1580.455)
@@ -789,49 +789,49 @@ position = Vector2(674.47095, 1580.455)
 position = Vector2(560.005, 1696.252)
 
 [node name="Torch44" parent="Torches" instance=ExtResource("3_dss4m")]
-position = Vector2(440.21497, 1780.105)
+position = Vector2(453.7978, 1772.6174)
 
 [node name="Torch45" parent="Torches" instance=ExtResource("3_dss4m")]
-position = Vector2(276.50195, 1813.3799)
+position = Vector2(273.75424, 1787.5742)
 
 [node name="Torch46" parent="Torches" instance=ExtResource("3_dss4m")]
-position = Vector2(739.69006, 1765.4639)
+position = Vector2(711.7654, 1769.9178)
 
 [node name="Torch47" parent="Torches" instance=ExtResource("3_dss4m")]
-position = Vector2(906.06506, 1758.809)
+position = Vector2(972.9569, 1724.1727)
 
 [node name="Torch48" parent="Torches" instance=ExtResource("3_dss4m")]
-position = Vector2(1031.1791, 1745.499)
+position = Vector2(1274.3934, 1675.9065)
 
 [node name="Torch49" parent="Torches" instance=ExtResource("3_dss4m")]
-position = Vector2(1166.941, 1752.1539)
+position = Vector2(1142.3442, 1763.3323)
 
 [node name="Torch50" parent="Torches" instance=ExtResource("3_dss4m")]
-position = Vector2(1342.9744, 1714.7689)
+position = Vector2(1386.4075, 1747.3956)
 
 [node name="Torch51" parent="Torches" instance=ExtResource("3_dss4m")]
-position = Vector2(1501.0972, 1786.5098)
+position = Vector2(1533.0273, 1798.8486)
 
 [node name="Torch52" parent="Torches" instance=ExtResource("3_dss4m")]
-position = Vector2(1651.8995, 1815.7919)
+position = Vector2(1657.7911, 1825.2583)
 
 [node name="Torch53" parent="Torches" instance=ExtResource("3_dss4m")]
-position = Vector2(1858.3376, 1744.051)
+position = Vector2(1864.515, 1725.5393)
 
 [node name="Torch54" parent="Torches" instance=ExtResource("3_dss4m")]
 position = Vector2(2031.1016, 1651.8126)
 
 [node name="Torch55" parent="Torches" instance=ExtResource("3_dss4m")]
-position = Vector2(2240.4678, 1669.3818)
+position = Vector2(2264.7144, 1670.8069)
 
 [node name="Torch56" parent="Torches" instance=ExtResource("3_dss4m")]
-position = Vector2(2240.4678, 1669.3818)
+position = Vector2(2414.4766, 1841.6066)
 
 [node name="Torch57" parent="Torches" instance=ExtResource("3_dss4m")]
-position = Vector2(2213.2358, 1839.2174)
+position = Vector2(2224.234, 1844.3834)
 
 [node name="Torch58" parent="Torches" instance=ExtResource("3_dss4m")]
-position = Vector2(1942.6702, 1863.375)
+position = Vector2(1871.3455, 1848.4802)
 
 [node name="Torch59" parent="Torches" instance=ExtResource("3_dss4m")]
 position = Vector2(2499.9065, 1786.0706)
@@ -840,13 +840,13 @@ position = Vector2(2499.9065, 1786.0706)
 position = Vector2(2435.486, 1694.2715)
 
 [node name="Torch61" parent="Torches" instance=ExtResource("3_dss4m")]
-position = Vector2(2688.3362, 1755.471)
+position = Vector2(2707.1936, 1737.3856)
 
 [node name="Torch62" parent="Torches" instance=ExtResource("3_dss4m")]
-position = Vector2(2793.0195, 1654.0088)
+position = Vector2(2815.8838, 1677.2805)
 
 [node name="Torch63" parent="Torches" instance=ExtResource("3_dss4m")]
-position = Vector2(2369.4553, 1505.8418)
+position = Vector2(2388.636, 1491.9562)
 
 [node name="Torch64" parent="Torches" instance=ExtResource("3_dss4m")]
 position = Vector2(2631.9685, 1454.3054)
@@ -870,7 +870,7 @@ position = Vector2(2461.8857, 1163.9784)
 position = Vector2(2651.926, 1075.4003)
 
 [node name="Torch71" parent="Torches" instance=ExtResource("3_dss4m")]
-position = Vector2(2800.093, 967.4961)
+position = Vector2(2793.2817, 989.19476)
 
 [node name="Torch72" parent="Torches" instance=ExtResource("3_dss4m")]
 position = Vector2(2276.5825, 1212.3046)
@@ -897,7 +897,7 @@ position = Vector2(2167.0679, 1075.4113)
 position = Vector2(2004.4065, 932.0758)
 
 [node name="Torch80" parent="Torches" instance=ExtResource("3_dss4m")]
-position = Vector2(1468.1066, 1230.0203)
+position = Vector2(1494.3588, 1206.262)
 
 [node name="Torch81" parent="Torches" instance=ExtResource("3_dss4m")]
 position = Vector2(1318.3291, 1201.031)
@@ -918,16 +918,16 @@ position = Vector2(1673.9587, 790.4158)
 position = Vector2(2464.984, 1015.6372)
 
 [node name="Torch87" parent="Torches" instance=ExtResource("3_dss4m")]
-position = Vector2(2371.4453, 900.66284)
+position = Vector2(2353.4758, 902.2609)
 
 [node name="Torch88" parent="Torches" instance=ExtResource("3_dss4m")]
 position = Vector2(2636.471, 869.4834)
 
 [node name="Torch89" parent="Torches" instance=ExtResource("3_dss4m")]
-position = Vector2(2751.4453, 740.86804)
+position = Vector2(2760.3982, 742.06683)
 
 [node name="Torch90" parent="Torches" instance=ExtResource("3_dss4m")]
-position = Vector2(2710.5222, 590.8168)
+position = Vector2(2703.3677, 613.65094)
 
 [node name="Torch91" parent="Torches" instance=ExtResource("3_dss4m")]
 position = Vector2(2468.8813, 629.7911)
@@ -942,25 +942,25 @@ position = Vector2(2071.3428, 756.45776)
 position = Vector2(1808.2661, 703.8424)
 
 [node name="Torch95" parent="Torches" instance=ExtResource("3_dss4m")]
-position = Vector2(1985.5994, 594.7142)
+position = Vector2(1971.082, 619.1266)
 
 [node name="Torch96" parent="Torches" instance=ExtResource("3_dss4m")]
 position = Vector2(2634.931, 459.86816)
 
 [node name="Torch97" parent="Torches" instance=ExtResource("3_dss4m")]
-position = Vector2(2448.917, 426.2085)
+position = Vector2(2481.1885, 426.22263)
 
 [node name="Torch98" parent="Torches" instance=ExtResource("3_dss4m")]
-position = Vector2(2213.2993, 429.75165)
+position = Vector2(2278.6978, 432.27875)
 
 [node name="Torch99" parent="Torches" instance=ExtResource("3_dss4m")]
 position = Vector2(2080.4321, 475.81223)
 
 [node name="Torch100" parent="Torches" instance=ExtResource("3_dss4m")]
-position = Vector2(1924.5349, 413.8076)
+position = Vector2(1945.2642, 424.45514)
 
 [node name="Torch101" parent="Torches" instance=ExtResource("3_dss4m")]
-position = Vector2(1940.7303, 278.40488)
+position = Vector2(1882.8765, 357.08112)
 
 [node name="Torch102" parent="Torches" instance=ExtResource("3_dss4m")]
 position = Vector2(1080.7166, 497.5449)
@@ -1339,7 +1339,7 @@ position = Vector2(2780.0305, 1725.3289)
 position = Vector2(2330.7632, 218.53668)
 
 [node name="Player" parent="." instance=ExtResource("3_k0juu")]
-position = Vector2(49, 294)
+position = Vector2(39, 298)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
