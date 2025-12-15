@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://cdmknbiwvgt"]
+[gd_scene load_steps=16 format=4 uid="uid://cdmknbiwvgt"]
 
 [ext_resource type="Script" uid="uid://jysaib40meg3" path="res://scenes/world.gd" id="1_71j4m"]
 [ext_resource type="TileSet" uid="uid://bhtybqqmxypek" path="res://tiles/tileset.tres" id="1_f3sb7"]
@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://b50mycp8wrsvw" path="res://scenes/fire/fire.tscn" id="9_7r4gi"]
 [ext_resource type="Texture2D" uid="uid://dwv4acudhi87g" path="res://textures/total-black-background-fo8bu4xz44tqguzu.webp" id="11_e3hyu"]
 [ext_resource type="Texture2D" uid="uid://dworb1v7frylr" path="res://textures/Posnetek zaslona 2025-12-14 214219.png" id="12_q5onr"]
+[ext_resource type="Texture2D" uid="uid://cqjd0tjqp221q" path="res://textures/fog.png" id="13_jhx03"]
+[ext_resource type="Texture2D" uid="uid://c8uujm2a7g1cy" path="res://textures/snow.png" id="14_o8fc1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w7kh3"]
 size = Vector2(143, 639)
@@ -447,6 +449,84 @@ show_behind_parent = true
 position = Vector2(1475.4999, 870.5)
 scale = Vector2(2.0122209, 2.612035)
 texture = ExtResource("12_q5onr")
+
+[node name="Fog" type="Node2D" parent="."]
+show_behind_parent = true
+
+[node name="Fog1" type="Sprite2D" parent="Fog"]
+position = Vector2(562, 129)
+texture = ExtResource("13_jhx03")
+
+[node name="Fog10" type="Sprite2D" parent="Fog"]
+position = Vector2(562, 129)
+texture = ExtResource("13_jhx03")
+
+[node name="Fog2" type="Sprite2D" parent="Fog"]
+position = Vector2(562, 129)
+texture = ExtResource("13_jhx03")
+
+[node name="Fog4" type="Sprite2D" parent="Fog"]
+position = Vector2(915, 84)
+texture = ExtResource("13_jhx03")
+
+[node name="Fog3" type="Sprite2D" parent="Fog"]
+position = Vector2(2035, -70)
+texture = ExtResource("13_jhx03")
+
+[node name="Fog12" type="Sprite2D" parent="Fog"]
+position = Vector2(2211, 233)
+texture = ExtResource("13_jhx03")
+
+[node name="Fog13" type="Sprite2D" parent="Fog"]
+position = Vector2(2937, 63)
+texture = ExtResource("13_jhx03")
+
+[node name="Fog14" type="Sprite2D" parent="Fog"]
+position = Vector2(2656, 105)
+texture = ExtResource("13_jhx03")
+
+[node name="Fog15" type="Sprite2D" parent="Fog"]
+position = Vector2(2257, 78)
+scale = Vector2(0.7472826, 1)
+texture = ExtResource("13_jhx03")
+
+[node name="Fog11" type="Sprite2D" parent="Fog"]
+position = Vector2(2656, 105)
+texture = ExtResource("13_jhx03")
+
+[node name="Fog5" type="Sprite2D" parent="Fog"]
+position = Vector2(915, 84)
+texture = ExtResource("13_jhx03")
+
+[node name="Fog6" type="Sprite2D" parent="Fog"]
+position = Vector2(1072, 26)
+texture = ExtResource("13_jhx03")
+
+[node name="Fog7" type="Sprite2D" parent="Fog"]
+position = Vector2(1072, 26)
+texture = ExtResource("13_jhx03")
+
+[node name="Fog8" type="Sprite2D" parent="Fog"]
+position = Vector2(1072, 26)
+texture = ExtResource("13_jhx03")
+
+[node name="Fog9" type="Sprite2D" parent="Fog"]
+position = Vector2(1072, 26)
+texture = ExtResource("13_jhx03")
+
+[node name="Snow" type="Node2D" parent="."]
+
+[node name="Snow1" type="Sprite2D" parent="Snow"]
+position = Vector2(2444, 89)
+texture = ExtResource("14_o8fc1")
+
+[node name="Snow2" type="Sprite2D" parent="Snow"]
+position = Vector2(1732, -50)
+texture = ExtResource("14_o8fc1")
+
+[node name="Snow3" type="Sprite2D" parent="Snow"]
+position = Vector2(3172, 85)
+texture = ExtResource("14_o8fc1")
 
 [connection signal="picked_up_coin" from="Coins/Coin1" to="." method="_on_wood_2_picked_up_coin"]
 [connection signal="picked_up_coin" from="Coins/Coin11" to="." method="_on_wood_2_picked_up_coin"]
