@@ -12,6 +12,7 @@ func start():
 	$WoodLabel.text = "Wood collected: " + str(Global.wood_count)
 	$CoinsLabel.text = "Coins left: " + str(Global.coin_count)
 	$TimeLabel.text = "Time taken: " + str(Global.time_taken) + "s"
+	$EnemyLabel.text = "Enemies killed: " + str(Global.enemies_killed)
 
 func back_to_game():
 	Global.reset_global_state()
