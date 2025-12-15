@@ -30,6 +30,7 @@ func _process(_delta: float) -> void:
 func enemy_killed(pos: Vector2):
 	var coin_scene = preload("res://scenes/coin/coin.tscn")
 	var heart_scene = preload("res://scenes/heart/heart.tscn")
+	Global.enemies_killed += 1
 	for i in range(3):
 		var coin = coin_scene.instantiate() as Area2D
 		coin.start(pos)
