@@ -93,3 +93,7 @@ func _on_fire_fire_lit() -> void:
 		await get_tree().create_timer(0.1).timeout
 		$CanvasLayer/GameOverlay.update_frost(Global.frost)
 		$Player.change_frost_radius(Global.frost)
+
+
+func _on_player_update_dash_count() -> void:
+	$CanvasLayer/GameOverlay.update_dash(Global.dash_count)

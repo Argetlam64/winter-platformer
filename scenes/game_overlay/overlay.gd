@@ -6,8 +6,10 @@ const wall_jump_text = "Wall jumps: "
 func _ready() -> void:
 	$HealthBar.max_value = Global.max_player_health
 	$FrostBar.max_value = Global.max_frost
-	$HealthBar.value = Global.player_health
-	$WallJumpCounter.text = wall_jump_text + str(Global.max_wall_jumps)
+	update_player_health(Global.player_health) 
+	update_wall_jump_count(Global.max_wall_jumps)
+	update_wall_jump_count(Global.max_wall_jumps)
+	update_dash(Global.dash_count)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -20,10 +22,13 @@ func update_wall_jump_count(count: int):
 	$WallJumpCounter.text = wall_jump_text + str(count)
 
 func update_coin_count(val: int):
-	$CoinCount.text = ": " + str(val)
+	$TextureRect/CoinCount.text = ": " + str(val)
 
 func update_wood_count(val: int):
-	$WoodCount.text = ": " + str(val)
+	$TextureRect2/WoodCount.text = ": " + str(val)
 
 func update_frost(val: int) -> void:
 	$FrostBar.value = val
+	
+func update_dash(val: int) -> void:
+	$DashLabel.text = "Dash count: " + str(val)

@@ -1571,5 +1571,6 @@ position = Vector2(2736, 552)
 [connection signal="fire_lit" from="Fire" to="." method="_on_fire_fire_lit"]
 [connection signal="player_damaged" from="Player" to="." method="_on_player_player_damaged"]
 [connection signal="player_died" from="Player" to="." method="_on_player_player_died"]
+[connection signal="update_dash_count" from="Player" to="." method="_on_player_update_dash_count"]
 [connection signal="update_wall_jump_count" from="Player" to="." method="_on_player_update_wall_jump_count"]
 [connection signal="timeout" from="Timers/FrostTimer" to="." method="_on_frost_timer_timeout"]
