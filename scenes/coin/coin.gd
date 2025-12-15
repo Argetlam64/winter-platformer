@@ -37,6 +37,7 @@ func pickup():
 		exists = false
 		$AnimationPlayer.play("pickup")
 		emit_signal("picked_up_coin")
+		$AudioStreamPlayer2D.play()
 
 func destroy():
 	queue_free()

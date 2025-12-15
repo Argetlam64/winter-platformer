@@ -88,9 +88,9 @@ func skeleton_die():
 	$".".set_collision_mask_value(2, false)
 	emit_signal("enemy_die", global_position)
 	
-	
 
 func reduce_hp():
+	$Sounds/Damaged.play()
 	flash_skeleton()
 	health_points -= 1
 	#print("Lost hp, " + str(health_points) + " left.")

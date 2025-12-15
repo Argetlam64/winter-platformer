@@ -1,9 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://dlf5vswl2lcu4"]
+[gd_scene load_steps=21 format=3 uid="uid://dlf5vswl2lcu4"]
 
 [ext_resource type="Texture2D" uid="uid://csosxwykydrmw" path="res://textures/Money.png" id="1_8xqtt"]
 [ext_resource type="Script" uid="uid://c3geol2vhwbdr" path="res://scenes/coin/coin.gd" id="1_qcha5"]
 [ext_resource type="FontFile" uid="uid://cojsua2s34upb" path="res://textures/fonts/Better VCR 9.0.1.ttf" id="2_f38ba"]
 [ext_resource type="Texture2D" uid="uid://bitxgdmehkqpn" path="res://textures/HUD.png" id="2_vrqvt"]
+[ext_resource type="AudioStream" uid="uid://bmp6l5a7rmb3r" path="res://sounds/coin_collected.wav" id="5_gtla7"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_5vuvm"]
 viewport_path = NodePath("SubViewport")
@@ -233,6 +234,9 @@ autoplay = "default"
 libraries = {
 &"": SubResource("AnimationLibrary_gpogo")
 }
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_gtla7")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

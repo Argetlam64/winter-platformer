@@ -31,6 +31,9 @@ func start_dash():
 		$DashTimer.start()
 		$SpriteAnimation.play("dash")
 		$DashCooldown.start()
+		
+func _ready() -> void:
+	$Sounds/BackgroundMusic.play()
 
 func _physics_process(delta: float) -> void:
 	if !Global.playing:
@@ -124,7 +127,7 @@ func damage_player():
 	if Global.player_health <= 0 or invincible:
 		return
 	
-		
+	$Sounds/Damaged.play()
 	Global.player_health -= 1
 	invincible = true
 	$DamageCooldown.start()
@@ -158,3 +161,7 @@ func _on_dash_cooldown_timeout() -> void:
 
 func _on_damage_cooldown_timeout() -> void:
 	invincible = false
+
+
+func _on_background_music_finished() -> void:
+	$Sounds/BackgroundMusic.play()
