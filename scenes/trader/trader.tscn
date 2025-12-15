@@ -1,8 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://styss4if42n7"]
+[gd_scene load_steps=20 format=3 uid="uid://styss4if42n7"]
 
 [ext_resource type="Texture2D" uid="uid://dbfv5y3kerw1g" path="res://textures/enemies/Skeleton Mage.png" id="1_bpfcs"]
 [ext_resource type="Script" uid="uid://ogvq7omvd47g" path="res://scenes/trader/trader.gd" id="1_icvyf"]
 [ext_resource type="Texture2D" uid="uid://bitxgdmehkqpn" path="res://textures/HUD.png" id="3_4ywav"]
+[ext_resource type="Texture2D" uid="uid://ba77csrlje8ak" path="res://textures/Money one.png" id="4_u8t45"]
+[ext_resource type="Texture2D" uid="uid://d3gocrwfp01fu" path="res://textures/fb202.png" id="5_twybw"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_4ywav"]
 viewport_path = NodePath("SubViewport")
@@ -141,6 +143,65 @@ autoplay = "default"
 position = Vector2(-1, -5)
 
 [node name="WoodItems" type="Node2D" parent="."]
+
+[node name="MoneyOne" type="Sprite2D" parent="."]
+position = Vector2(-9, 15)
+texture = ExtResource("4_u8t45")
+
+[node name="Fb202" type="Sprite2D" parent="."]
+position = Vector2(21, 15)
+scale = Vector2(0.390625, 0.42187503)
+texture = ExtResource("5_twybw")
+
+[node name="MoneyOne2" type="Sprite2D" parent="."]
+position = Vector2(-16, 15)
+texture = ExtResource("4_u8t45")
+
+[node name="MoneyOne3" type="Sprite2D" parent="."]
+position = Vector2(-14, 10)
+texture = ExtResource("4_u8t45")
+
+[node name="Fb203" type="Sprite2D" parent="."]
+position = Vector2(24, 15)
+scale = Vector2(0.40625, 0.40625)
+texture = ExtResource("5_twybw")
+
+[node name="Fb204" type="Sprite2D" parent="."]
+position = Vector2(27.000002, 15)
+scale = Vector2(0.40625, 0.40625)
+texture = ExtResource("5_twybw")
+
+[node name="Fb205" type="Sprite2D" parent="."]
+position = Vector2(23.000002, 11)
+scale = Vector2(0.40625, 0.40625)
+texture = ExtResource("5_twybw")
+
+[node name="Fb206" type="Sprite2D" parent="."]
+position = Vector2(27, 10)
+scale = Vector2(0.40625, 0.40625)
+texture = ExtResource("5_twybw")
+
+[node name="Fb207" type="Sprite2D" parent="."]
+position = Vector2(31, 14)
+scale = Vector2(0.40625, 0.40625)
+texture = ExtResource("5_twybw")
+
+[node name="Fb208" type="Sprite2D" parent="."]
+position = Vector2(24, 6)
+scale = Vector2(0.40625, 0.40625)
+texture = ExtResource("5_twybw")
+
+[node name="MoneyOne4" type="Sprite2D" parent="."]
+position = Vector2(-4, 15)
+texture = ExtResource("4_u8t45")
+
+[node name="MoneyOne5" type="Sprite2D" parent="."]
+position = Vector2(-8, 9)
+texture = ExtResource("4_u8t45")
+
+[node name="MoneyOne6" type="Sprite2D" parent="."]
+position = Vector2(-12, 4)
+texture = ExtResource("4_u8t45")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

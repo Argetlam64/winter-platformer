@@ -1557,7 +1557,7 @@ position = Vector2(1853.0167, 917.9911)
 position = Vector2(2155.3787, 260.3769)
 
 [node name="Trader" parent="." instance=ExtResource("6_4mrxx")]
-position = Vector2(2780.0305, 1725.3289)
+position = Vector2(2780.0942, 1731.4209)
 metadata/_edit_lock_ = true
 
 [node name="Fire" parent="." instance=ExtResource("9_7r4gi")]
