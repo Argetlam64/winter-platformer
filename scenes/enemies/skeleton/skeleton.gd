@@ -2,14 +2,17 @@ extends CharacterBody2D
 
 var direction: Vector2 = Vector2.ZERO
 var player: CharacterBody2D
-var speed: int = 40
+var speed: int
 var attacking = false
 var player_in_area = false
 var original_pos = position
-var health_points: int = 3
+var health_points: int
 
 signal enemy_die(pos: Vector2)
 
+func _ready() -> void:
+	health_points = Global.skeleton_health
+	speed = Global.skeleton_speed
 
 func _physics_process(delta: float) -> void:
 	if !Global.playing:
@@ -18,8 +21,6 @@ func _physics_process(delta: float) -> void:
 	velocity = Vector2(0, velocity.y)
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-	
-
 		
 	if attacking or health_points <= 0:
 		move_and_slide()
