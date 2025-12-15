@@ -14,6 +14,3 @@ func setup(pos: Vector2):
 	
 func start():
 	$AnimationPlayer.play("drop")
-	
-	
-	

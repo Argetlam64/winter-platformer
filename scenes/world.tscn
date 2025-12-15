@@ -400,7 +400,7 @@ position = Vector2(2780.0305, 1725.3289)
 position = Vector2(2330.7632, 218.53668)
 
 [node name="Player" parent="." instance=ExtResource("3_k0juu")]
-position = Vector2(39.107468, 303.03305)
+position = Vector2(-98.87558, 297.06937)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

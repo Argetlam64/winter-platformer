@@ -26,7 +26,7 @@ func throw_wood():
 
 func trade_for_wood():
 	if Global.coin_count > 0:
-		for i in range(Global.coin_count):
+		for i in range(min(Global.coin_count, 5)):
 			throw_wood()
 			await get_tree().create_timer(0.2).timeout
 			

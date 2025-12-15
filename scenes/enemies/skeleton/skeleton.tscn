@@ -314,7 +314,7 @@ radius = 84.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_me6e6"]
 radius = 13.0
-height = 52.0
+height = 48.0
 
 [sub_resource type="Animation" id="Animation_me6e6"]
 resource_name = "attack"

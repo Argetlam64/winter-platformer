@@ -13,6 +13,7 @@ var dash_time = 0.2
 var last_direction = 1
 var is_dashing = false
 var can_dash = true
+var invincible = false
 
 signal player_died
 signal player_damaged
@@ -115,11 +116,13 @@ func flash_player():
 	$".".modulate = original
 
 func damage_player():
-	if Global.player_health <= 0:
+	if Global.player_health <= 0 or invincible:
 		return
 	
 		
 	Global.player_health -= 1
+	invincible = true
+	$DamageCooldown.start()
 	emit_signal("player_damaged")
 	print("Player health: " + str(Global.player_health))
 	if Global.player_health <= 0:
@@ -140,3 +143,7 @@ func _on_dash_timer_timeout() -> void:
 
 func _on_dash_cooldown_timeout() -> void:
 	can_dash = true
+
+
+func _on_damage_cooldown_timeout() -> void:
+	invincible = false

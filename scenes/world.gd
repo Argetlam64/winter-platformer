@@ -24,12 +24,24 @@ func _process(_delta: float) -> void:
 
 func enemy_killed(pos: Vector2):
 	var coin_scene = preload("res://scenes/coin/coin.tscn")
+	var heart_scene = preload("res://scenes/heart/heart.tscn")
 	for i in range(3):
 		var coin = coin_scene.instantiate() as Area2D
 		coin.start(pos)
 		coin.picked_up_coin.connect(coin_collected)
 		$Coins.add_child(coin)
 		await get_tree().create_timer(0.2).timeout
+	if randf() > Global.heart_drop_chance:
+		var heart = heart_scene.instantiate() as Area2D
+		heart.start(pos)
+		heart.heart_pickup.connect(heal_player)
+		$Coins.add_child(heart)
+		
+	
+func heal_player():
+	if Global.player_health < Global.max_player_health:
+		Global.player_health += 1
+		$CanvasLayer/GameOverlay.update_player_health(Global.player_health)
 
 func _on_player_player_damaged() -> void:
 	if "update_player_health" in $CanvasLayer/GameOverlay:
@@ -57,19 +69,20 @@ func traded() -> void:
 
 
 func _on_frost_timer_timeout() -> void:
-	Global.frost += 1
-	Global.time_taken += 1
-	$CanvasLayer/GameOverlay.update_frost(Global.frost)
-	$Player.change_frost_radius(Global.frost)
-	if Global.frost >= Global.max_frost:
-		$Player.damage_player()
+	if Global.playing:
+		Global.frost += 1
+		Global.time_taken += 1
+		$CanvasLayer/GameOverlay.update_frost(Global.frost)
+		$Player.change_frost_radius(Global.frost)
+		if Global.frost >= Global.max_frost:
+			$Player.damage_player()
 
 
 func _on_fire_fire_lit() -> void:
 	Global.playing = false
 	$CanvasLayer/WinScreen.start()
 	
-	for i in range(Global.max_frost * 5):	
+	while Global.frost > 0:	
 		Global.frost -= 1
 		await get_tree().create_timer(0.1).timeout
 		$CanvasLayer/GameOverlay.update_frost(Global.frost)
