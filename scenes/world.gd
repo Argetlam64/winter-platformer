@@ -41,7 +41,7 @@ func enemy_killed(pos: Vector2):
 		coin.picked_up_coin.connect(coin_collected)
 		$Coins.add_child(coin)
 		await get_tree().create_timer(0.2).timeout
-	if randf() > Global.heart_drop_chance:
+	if randf() < Global.heart_drop_chance:
 		var heart = heart_scene.instantiate() as Area2D
 		heart.start(pos)
 		heart.heart_pickup.connect(heal_player)
