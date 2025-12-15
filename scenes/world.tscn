@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://cdmknbiwvgt"]
+[gd_scene load_steps=24 format=4 uid="uid://cdmknbiwvgt"]
 
 [ext_resource type="Script" uid="uid://jysaib40meg3" path="res://scenes/world.gd" id="1_71j4m"]
 [ext_resource type="TileSet" uid="uid://bhtybqqmxypek" path="res://tiles/tileset.tres" id="1_f3sb7"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://cqjd0tjqp221q" path="res://textures/fog.png" id="13_jhx03"]
 [ext_resource type="Texture2D" uid="uid://c8uujm2a7g1cy" path="res://textures/snow.png" id="14_o8fc1"]
 [ext_resource type="PackedScene" uid="uid://drapjsnub10h3" path="res://scenes/map/floating_stone.tscn" id="18_lakw3"]
+[ext_resource type="Texture2D" uid="uid://dworb1v7frylr" path="res://textures/Posnetek zaslona 2025-12-14 214219.png" id="19_pm21f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lakw3"]
 texture = ExtResource("2_7t5mc")
@@ -1554,6 +1555,12 @@ position = Vector2(2499, 623)
 
 [node name="floating_stone30" parent="Node2D" instance=ExtResource("18_lakw3")]
 position = Vector2(2736, 552)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(1549.75, -85.25)
+scale = Vector2(2.3061526, 0.86500394)
+texture = ExtResource("19_pm21f")
 
 [connection signal="picked_up_coin" from="Coins/Coin1" to="." method="_on_wood_2_picked_up_coin"]
 [connection signal="picked_up_coin" from="Coins/Coin11" to="." method="_on_wood_2_picked_up_coin"]
