@@ -423,9 +423,8 @@ visible = false
 autostart = true
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-visible = false
-color = Color(0, 1, 1, 1)
-energy = 4.23
+color = Color(0, 0, 0, 1)
+energy = 0.5
 blend_mode = 2
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
