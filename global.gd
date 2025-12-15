@@ -5,7 +5,7 @@ const max_wall_jumps: int = 2
 const max_frost: int = 600
 const max_player_light_scale = 10
 const required_wood: int = 100
-const heart_drop_chance: float = 0.8
+const heart_drop_chance: float = 1#0.8
 const max_dash_count = 2
 
 var player_health: int = max_player_health
