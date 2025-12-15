@@ -39,9 +39,6 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if !Global.playing:
 		return 
-	#can't cancel attacking
-	if (is_attacking and is_on_floor()) and !alive:
-		return
 	
 	if is_dashing:
 		velocity.x = last_direction * dash_speed
@@ -51,6 +48,9 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+	
+	if is_attacking or !alive:
+		return
 		
 	elif current_wall_jumps < Global.max_wall_jumps:
 		current_wall_jumps = Global.max_wall_jumps
@@ -87,6 +87,7 @@ func _physics_process(delta: float) -> void:
 			$SpriteAnimation.play("attack")
 			$AnimationPlayer.play("attack")
 			is_attacking = true
+			return
 			
 		elif direction:
 			$SpriteAnimation.flip_h = velocity.x < 0
@@ -94,11 +95,12 @@ func _physics_process(delta: float) -> void:
 		
 		elif !is_attacking:
 			$SpriteAnimation.play("idle")
-	elif Input.is_action_just_pressed("attack"):
+	elif Input.is_action_just_pressed("attack") and !is_attacking:
 		$Sounds/Slash.play()
 		$SpriteAnimation.play("jump_attack")
 		$AnimationPlayer.play("attack")
 		is_attacking = true
+		return
 
 	move_and_slide()	
 
@@ -109,7 +111,8 @@ func attack() -> void:
 
 #check if the animation is finished (can't cancel attack)
 func _on_sprite_animation_animation_finished() -> void:
-	is_attacking = false
+	if $SpriteAnimation.animation in ["attack", "jump_attack"]:
+		is_attacking = false
 		
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
