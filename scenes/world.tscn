@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=25 format=4 uid="uid://cdmknbiwvgt"]
+=======
+[gd_scene load_steps=52 format=4 uid="uid://cdmknbiwvgt"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Script" uid="uid://jysaib40meg3" path="res://scenes/world.gd" id="1_71j4m"]
 [ext_resource type="TileSet" uid="uid://bhtybqqmxypek" path="res://tiles/tileset.tres" id="1_f3sb7"]
@@ -19,7 +23,14 @@
 [ext_resource type="Texture2D" uid="uid://cqjd0tjqp221q" path="res://textures/fog.png" id="13_jhx03"]
 [ext_resource type="Texture2D" uid="uid://c8uujm2a7g1cy" path="res://textures/snow.png" id="14_o8fc1"]
 [ext_resource type="PackedScene" uid="uid://drapjsnub10h3" path="res://scenes/map/floating_stone.tscn" id="18_lakw3"]
+<<<<<<< Updated upstream
 [ext_resource type="Texture2D" uid="uid://dworb1v7frylr" path="res://textures/Posnetek zaslona 2025-12-14 214219.png" id="19_pm21f"]
+=======
+[ext_resource type="Texture2D" uid="uid://dbfv5y3kerw1g" path="res://textures/enemies/Skeleton Mage.png" id="21_7iits"]
+[ext_resource type="Texture2D" uid="uid://d3gocrwfp01fu" path="res://textures/fb202.png" id="21_kpybi"]
+[ext_resource type="Texture2D" uid="uid://2tnlatjbuf5w" path="res://textures/campfire-sheet.png" id="21_oo54l"]
+[ext_resource type="Texture2D" uid="uid://csosxwykydrmw" path="res://textures/Money.png" id="22_kpybi"]
+>>>>>>> Stashed changes
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lakw3"]
 texture = ExtResource("2_7t5mc")
@@ -641,6 +652,184 @@ sources/1 = SubResource("TileSetAtlasSource_pm21f")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w7kh3"]
 size = Vector2(143, 639)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_oo54l"]
+atlas = ExtResource("21_7iits")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kpybi"]
+atlas = ExtResource("21_7iits")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ctatt"]
+atlas = ExtResource("21_7iits")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xgqkh"]
+atlas = ExtResource("21_7iits")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_munwf"]
+atlas = ExtResource("21_7iits")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ts3gi"]
+atlas = ExtResource("21_7iits")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0nbtd"]
+atlas = ExtResource("21_7iits")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_37qwj"]
+atlas = ExtResource("21_7iits")
+region = Rect2(336, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_navra"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oo54l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kpybi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ctatt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xgqkh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_munwf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ts3gi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0nbtd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_37qwj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_navra"]
+atlas = ExtResource("21_oo54l")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_luhhm"]
+atlas = ExtResource("21_oo54l")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fh13f"]
+atlas = ExtResource("21_oo54l")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rup4s"]
+atlas = ExtResource("21_oo54l")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4kbfs"]
+atlas = ExtResource("21_oo54l")
+region = Rect2(128, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f17e3"]
+atlas = ExtResource("21_oo54l")
+region = Rect2(160, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2olw"]
+atlas = ExtResource("21_oo54l")
+region = Rect2(192, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_817gm"]
+atlas = ExtResource("21_oo54l")
+region = Rect2(224, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ggc52"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_navra")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_luhhm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fh13f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rup4s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4kbfs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f17e3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x2olw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_817gm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8ah6"]
+atlas = ExtResource("22_kpybi")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e75v4"]
+atlas = ExtResource("22_kpybi")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8u370"]
+atlas = ExtResource("22_kpybi")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rga7q"]
+atlas = ExtResource("22_kpybi")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6oujy"]
+atlas = ExtResource("22_kpybi")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hi6a0"]
+atlas = ExtResource("22_kpybi")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eo1xk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8ah6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e75v4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8u370")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rga7q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6oujy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hi6a0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_71j4m")
 metadata/_edit_vertical_guides_ = [-217.0, 3102.0]
@@ -989,6 +1178,36 @@ position = Vector2(1130.9473, 255.80542)
 
 [node name="Coins" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
+
+[node name="Coin" parent="Coins" instance=ExtResource("7_i7141")]
+position = Vector2(1152, 3)
+
+[node name="Coin106" parent="Coins" instance=ExtResource("7_i7141")]
+position = Vector2(1236, -87)
+
+[node name="Coin107" parent="Coins" instance=ExtResource("7_i7141")]
+position = Vector2(1312, -207)
+
+[node name="Coin108" parent="Coins" instance=ExtResource("7_i7141")]
+position = Vector2(1355, -301)
+
+[node name="Coin109" parent="Coins" instance=ExtResource("7_i7141")]
+position = Vector2(1484, -374)
+
+[node name="Coin110" parent="Coins" instance=ExtResource("7_i7141")]
+position = Vector2(1583, -295)
+
+[node name="Coin111" parent="Coins" instance=ExtResource("7_i7141")]
+position = Vector2(1655, -182)
+
+[node name="Coin112" parent="Coins" instance=ExtResource("7_i7141")]
+position = Vector2(1704, -112)
+
+[node name="Coin113" parent="Coins" instance=ExtResource("7_i7141")]
+position = Vector2(1806, 127)
+
+[node name="Coin114" parent="Coins" instance=ExtResource("7_i7141")]
+position = Vector2(1969, 76)
 
 [node name="Coin1" parent="Coins" instance=ExtResource("7_i7141")]
 position = Vector2(263, 285)
@@ -1383,7 +1602,11 @@ position = Vector2(2330.7632, 218.53668)
 metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("3_k0juu")]
+<<<<<<< Updated upstream
 position = Vector2(-143.18532, 282.28415)
+=======
+position = Vector2(-118, 294)
+>>>>>>> Stashed changes
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -1521,6 +1744,7 @@ texture = ExtResource("14_o8fc1")
 position = Vector2(3172, 85)
 texture = ExtResource("14_o8fc1")
 
+<<<<<<< Updated upstream
 [node name="FloatingStones" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
 
@@ -1610,6 +1834,142 @@ position = Vector2(2513, 629)
 
 [node name="floating_stone30" parent="FloatingStones" instance=ExtResource("18_lakw3")]
 position = Vector2(2734, 568)
+=======
+[node name="floating-stones" type="Node2D" parent="."]
+
+[node name="floating_stone" parent="floating-stones" instance=ExtResource("18_lakw3")]
+position = Vector2(1129, 215)
+
+[node name="floating_stone2" parent="floating-stones" instance=ExtResource("18_lakw3")]
+position = Vector2(1101, 503)
+
+[node name="floating_stone3" parent="floating-stones" instance=ExtResource("18_lakw3")]
+position = Vector2(1034, 550)
+
+[node name="floating_stone4" parent="floating-stones" instance=ExtResource("18_lakw3")]
+position = Vector2(505, 576)
+
+[node name="floating_stone5" parent="floating-stones" instance=ExtResource("18_lakw3")]
+position = Vector2(312, 528)
+
+[node name="floating_stone6" parent="floating-stones" instance=ExtResource("18_lakw3")]
+position = Vector2(192, 625)
+
+[node name="floating_stone7" parent="floating-stones" instance=ExtResource("18_lakw3")]
+position = Vector2(773, 814)
+
+[node name="floating_stone8" parent="floating-stones" instance=ExtResource("18_lakw3")]
+position = Vector2(218, 1271)
+
+[node name="floating_stone9" parent="floating-stones" instance=ExtResource("18_lakw3")]
+position = Vector2(315, 1595)
+
+[node name="floating_stone10" parent="floating-stones" instance=ExtResource("18_lakw3")]
+position = Vector2(645, 1606)
+
+[node name="floating_stone11" parent="floating-stones" instance=ExtResource("18_lakw3")]
+position = Vector2(769, 1129)
+
+[node name="floating_stone12" parent="floating-stones" instance=ExtResource("18_lakw3")]
+position = Vector2(984, 1439)
+
+[node name="floating_stone13" parent="floating-stones" instance=ExtResource("18_lakw3")]
+position = Vector2(1032, 1296)
+
+[node name="floating_stone14" parent="floating-stones" instance=ExtResource("18_lakw3")]
+position = Vector2(2523, 1752)
+
+[node name="floating_stone15" parent="floating-stones" instance=ExtResource("18_lakw3")]
+position = Vector2(1871, 1390)
+
+[node name="floating_stone16" parent="floating-stones" instance=ExtResource("18_lakw3")]
+position = Vector2(842, 695)
+
+[node name="floating_stone17" parent="floating-stones" instance=ExtResource("18_lakw3")]
+position = Vector2(983, 745)
+
+[node name="floating_stone18" parent="floating-stones" instance=ExtResource("18_lakw3")]
+position = Vector2(1202, 746)
+
+[node name="floating_stone19" parent="floating-stones" instance=ExtResource("18_lakw3")]
+position = Vector2(1230, 650)
+
+[node name="floating_stone20" parent="floating-stones" instance=ExtResource("18_lakw3")]
+position = Vector2(1300, 550)
+
+[node name="floating_stone21" parent="floating-stones" instance=ExtResource("18_lakw3")]
+position = Vector2(1707, 766)
+
+[node name="floating_stone22" parent="floating-stones" instance=ExtResource("18_lakw3")]
+position = Vector2(1968, 888)
+
+[node name="floating_stone23" parent="floating-stones" instance=ExtResource("18_lakw3")]
+position = Vector2(2340, 1500)
+
+[node name="floating_stone24" parent="floating-stones" instance=ExtResource("18_lakw3")]
+position = Vector2(2558, 1152)
+
+[node name="floating_stone25" parent="floating-stones" instance=ExtResource("18_lakw3")]
+position = Vector2(2609, 1151)
+
+[node name="floating_stone26" parent="floating-stones" instance=ExtResource("18_lakw3")]
+position = Vector2(2832, 1173)
+
+[node name="floating_stone27" parent="floating-stones" instance=ExtResource("18_lakw3")]
+position = Vector2(2907, 1175)
+
+[node name="floating_stone28" parent="floating-stones" instance=ExtResource("18_lakw3")]
+position = Vector2(2720, 720)
+
+[node name="floating_stone29" parent="floating-stones" instance=ExtResource("18_lakw3")]
+position = Vector2(2499, 623)
+
+[node name="floating_stone30" parent="floating-stones" instance=ExtResource("18_lakw3")]
+position = Vector2(2736, 552)
+>>>>>>> Stashed changes
+
+[node name="tutorial" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -211.0
+offset_top = 240.0
+offset_right = -146.0
+offset_bottom = 266.0
+
+[node name="Label" type="Label" parent="tutorial"]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 63.0
+offset_bottom = 25.0
+text = "Pick up     ,  find        to trade for       and light the         on
+the other side of the cave"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect3" type="TextureRect" parent="tutorial"]
+layout_mode = 0
+offset_left = 247.0
+offset_top = 2.0
+offset_right = 268.0
+offset_bottom = 23.0
+texture = ExtResource("21_kpybi")
+expand_mode = 1
+
+[node name="mage" type="AnimatedSprite2D" parent="tutorial"]
+position = Vector2(142, 7)
+sprite_frames = SubResource("SpriteFrames_navra")
+autoplay = "default"
+
+[node name="fire" type="AnimatedSprite2D" parent="tutorial"]
+position = Vector2(386, -2)
+sprite_frames = SubResource("SpriteFrames_ggc52")
+autoplay = "default"
+
+[node name="coin" type="AnimatedSprite2D" parent="tutorial"]
+position = Vector2(71, 11.999998)
+scale = Vector2(1.8437498, 1.8437498)
+sprite_frames = SubResource("SpriteFrames_eo1xk")
+autoplay = "default"
 
 [connection signal="picked_up_coin" from="Coins/Coin1" to="." method="_on_wood_2_picked_up_coin"]
 [connection signal="picked_up_coin" from="Coins/Coin11" to="." method="_on_wood_2_picked_up_coin"]
