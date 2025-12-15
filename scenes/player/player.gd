@@ -14,6 +14,7 @@ var last_direction = 1
 var is_dashing = false
 var can_dash = true
 var invincible = false
+var wants_to_jump = false
 
 signal player_died
 signal player_damaged
@@ -39,9 +40,6 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if !Global.playing:
 		return 
-	#can't cancel attacking
-	if (is_attacking and is_on_floor()) and !alive:
-		return
 	
 	if is_dashing:
 		velocity.x = last_direction * dash_speed
@@ -51,6 +49,9 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+	
+	if is_attacking or !alive:
+		return
 		
 	elif current_wall_jumps < Global.max_wall_jumps:
 		current_wall_jumps = Global.max_wall_jumps
@@ -68,10 +69,15 @@ func _physics_process(delta: float) -> void:
 		start_dash()
 		return
 	
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if (Input.is_action_just_pressed("jump") or wants_to_jump)and is_on_floor():
+		wants_to_jump = false
 		velocity.y = JUMP_VELOCITY
 		$SpriteAnimation.play("jump_up")
 		$Sounds/Jump.play()
+	
+	elif Input.is_action_just_pressed("jump") and !is_on_floor():
+		wants_to_jump = true
+		$JumpOffsetTimer.start()
 	
 	elif Input.is_action_just_pressed("jump") and is_on_wall() and current_wall_jumps > 0:
 		$Sounds/Jump.play()
@@ -87,6 +93,7 @@ func _physics_process(delta: float) -> void:
 			$SpriteAnimation.play("attack")
 			$AnimationPlayer.play("attack")
 			is_attacking = true
+			return
 			
 		elif direction:
 			$SpriteAnimation.flip_h = velocity.x < 0
@@ -94,11 +101,12 @@ func _physics_process(delta: float) -> void:
 		
 		elif !is_attacking:
 			$SpriteAnimation.play("idle")
-	elif Input.is_action_just_pressed("attack"):
+	elif Input.is_action_just_pressed("attack") and !is_attacking:
 		$Sounds/Slash.play()
 		$SpriteAnimation.play("jump_attack")
 		$AnimationPlayer.play("attack")
 		is_attacking = true
+		return
 
 	move_and_slide()	
 
@@ -109,7 +117,8 @@ func attack() -> void:
 
 #check if the animation is finished (can't cancel attack)
 func _on_sprite_animation_animation_finished() -> void:
-	is_attacking = false
+	if $SpriteAnimation.animation in ["attack", "jump_attack"]:
+		is_attacking = false
 		
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
@@ -176,3 +185,7 @@ func _on_damage_cooldown_timeout() -> void:
 
 func _on_background_music_finished() -> void:
 	$Sounds/BackgroundMusic.play()
+
+
+func _on_jump_offset_timer_timeout() -> void:
+	wants_to_jump = false

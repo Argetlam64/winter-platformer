@@ -571,6 +571,9 @@ stream = ExtResource("14_ugbui")
 [node name="Jump" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource("15_fcs02")
 
+[node name="JumpOffsetTimer" type="Timer" parent="."]
+wait_time = 0.3
+
 [connection signal="animation_finished" from="SpriteAnimation" to="." method="_on_sprite_animation_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
@@ -578,3 +581,4 @@ stream = ExtResource("15_fcs02")
 [connection signal="timeout" from="DashCooldown" to="." method="_on_dash_cooldown_timeout"]
 [connection signal="timeout" from="DamageCooldown" to="." method="_on_damage_cooldown_timeout"]
 [connection signal="finished" from="Sounds/BackgroundMusic" to="." method="_on_background_music_finished"]
+[connection signal="timeout" from="JumpOffsetTimer" to="." method="_on_jump_offset_timer_timeout"]
