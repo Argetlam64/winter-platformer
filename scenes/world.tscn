@@ -1383,7 +1383,7 @@ position = Vector2(2330.7632, 218.53668)
 metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("3_k0juu")]
-position = Vector2(-130, 286)
+position = Vector2(-143.18532, 282.28415)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
