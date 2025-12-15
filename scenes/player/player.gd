@@ -14,6 +14,7 @@ var last_direction = 1
 var is_dashing = false
 var can_dash = true
 var invincible = false
+var wants_to_jump = false
 
 signal player_died
 signal player_damaged
@@ -68,10 +69,15 @@ func _physics_process(delta: float) -> void:
 		start_dash()
 		return
 	
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if (Input.is_action_just_pressed("jump") or wants_to_jump)and is_on_floor():
+		wants_to_jump = false
 		velocity.y = JUMP_VELOCITY
 		$SpriteAnimation.play("jump_up")
 		$Sounds/Jump.play()
+	
+	elif Input.is_action_just_pressed("jump") and !is_on_floor():
+		wants_to_jump = true
+		$JumpOffsetTimer.start()
 	
 	elif Input.is_action_just_pressed("jump") and is_on_wall() and current_wall_jumps > 0:
 		$Sounds/Jump.play()
@@ -179,3 +185,7 @@ func _on_damage_cooldown_timeout() -> void:
 
 func _on_background_music_finished() -> void:
 	$Sounds/BackgroundMusic.play()
+
+
+func _on_jump_offset_timer_timeout() -> void:
+	wants_to_jump = false
