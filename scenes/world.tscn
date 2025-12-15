@@ -1393,6 +1393,7 @@ blend_mode = 2
 color = Color(2.695322e-06, 0.8945244, 0.89380103, 1)
 
 [node name="Background1" type="Sprite2D" parent="."]
+visible = false
 show_behind_parent = true
 position = Vector2(1474.5, 786.00006)
 scale = Vector2(5.596512, 7.103306)
@@ -1576,7 +1577,6 @@ position = Vector2(2513, 629)
 position = Vector2(2734, 568)
 
 [node name="Background2-real_one" type="Sprite2D" parent="."]
-visible = false
 show_behind_parent = true
 position = Vector2(1549.75, -85.25)
 scale = Vector2(2.3061526, 0.86500394)
