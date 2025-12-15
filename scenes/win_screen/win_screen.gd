@@ -14,11 +14,7 @@ func start():
 	$TimeLabel.text = "Time taken: " + str(Global.time_taken) + "s"
 
 func back_to_game():
-	Global.player_health = Global.max_player_health
-	Global.wood_count = 0
-	Global.coin_count = 0
-	Global.frost = 0
-	Global.playing = true
+	Global.reset_global_state()
 	get_tree().change_scene_to_file("res://scenes/world.tscn")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

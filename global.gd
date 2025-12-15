@@ -13,5 +13,16 @@ var coin_count: int = 0
 var frost: int = 0
 var time_taken: int = 0
 var pause = false
+var enemies_killed = 0
 
 var playing = true
+
+func reset_global_state():
+	player_health = max_player_health
+	frost = 0
+	coin_count = 0
+	wood_count = 0
+	enemies_killed = 0
+	pause = false
+	playing = true
+	time_taken = 0
