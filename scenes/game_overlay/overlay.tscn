@@ -34,45 +34,44 @@ offset_right = 114.0
 offset_bottom = 81.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_5f6ye")
-text = "Wall jumps: "
+text = "Wall jumps: 0"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
-offset_top = 90.0
+offset_top = 110.0
 offset_right = 154.0
-offset_bottom = 165.0
+offset_bottom = 193.0
 texture = ExtResource("3_wlswc")
 stretch_mode = 4
+
+[node name="CoinCount" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 80.0
+offset_top = 20.0
+offset_right = 117.0
+offset_bottom = 53.0
+theme_override_fonts/font = ExtResource("2_5f6ye")
+theme_override_font_sizes/font_size = 25
+text = ": 0"
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
 offset_left = 20.0
-offset_top = 160.0
+offset_top = 200.0
 offset_right = 154.0
-offset_bottom = 209.0
+offset_bottom = 253.0
 texture = ExtResource("4_nit6v")
 stretch_mode = 4
 
-[node name="CoinCount" type="Label" parent="."]
+[node name="WoodCount" type="Label" parent="TextureRect2"]
 layout_mode = 1
 anchors_preset = -1
 offset_left = 60.0
-offset_top = 110.0
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_fonts/font = ExtResource("2_5f6ye")
-theme_override_font_sizes/font_size = 25
-text = ": 0"
-
-[node name="WoodCount" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = -1
-offset_left = 60.0
-offset_top = 160.0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_right = 97.0
+offset_bottom = 33.0
 theme_override_fonts/font = ExtResource("2_5f6ye")
 theme_override_font_sizes/font_size = 25
 text = ": 0"
@@ -118,3 +117,14 @@ offset_right = -60.0
 offset_bottom = 40.0
 grow_horizontal = 2
 texture = ExtResource("5_k5oma")
+
+[node name="DashLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 20.0
+offset_top = 100.0
+offset_right = 144.0
+offset_bottom = 23.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_5f6ye")
+text = "Dash meter: 0"

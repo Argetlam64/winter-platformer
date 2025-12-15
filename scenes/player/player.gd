@@ -18,14 +18,19 @@ var invincible = false
 signal player_died
 signal player_damaged
 signal update_wall_jump_count(count: int)
+signal update_dash_count
 
 func start_dash():
 	is_dashing = true
-	can_dash = false
-	velocity.y = 0
-	$DashTimer.start()
-	$SpriteAnimation.play("dash")
-	$DashCooldown.start()
+	if Global.dash_count > 0:
+		Global.dash_count -= 1
+		emit_signal("update_dash_count")
+		if Global.dash_count <= 0:
+			can_dash = false
+		velocity.y = 0
+		$DashTimer.start()
+		$SpriteAnimation.play("dash")
+		$DashCooldown.start()
 
 func _physics_process(delta: float) -> void:
 	if !Global.playing:
@@ -142,7 +147,13 @@ func _on_dash_timer_timeout() -> void:
 
 
 func _on_dash_cooldown_timeout() -> void:
-	can_dash = true
+	if Global.dash_count >= Global.max_dash_count:
+		return
+	Global.dash_count += 1
+	emit_signal("update_dash_count")
+	print("Dash restored: " + str(Global.dash_count))
+	if Global.dash_count > 0:
+		can_dash = true
 
 
 func _on_damage_cooldown_timeout() -> void:
