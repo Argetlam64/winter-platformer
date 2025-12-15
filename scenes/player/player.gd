@@ -133,15 +133,18 @@ func flash_player():
 	$".".modulate = original
 
 func damage_player():
-	if Global.player_health <= 0 or invincible:
+	if invincible:
 		return
-	
-	$Sounds/Damaged.play()
 	Global.player_health -= 1
+	if Global.player_health < 0:
+		print("Dead already")
+		return 
+	$Sounds/Damaged.play()
+	
 	invincible = true
 	$DamageCooldown.start()
 	emit_signal("player_damaged")
-	print("Player health: " + str(Global.player_health))
+	#print("Player health: " + str(Global.player_health))
 	if Global.player_health <= 0:
 		player_die()
 	flash_player()
@@ -162,7 +165,7 @@ func _on_dash_cooldown_timeout() -> void:
 		return
 	Global.dash_count += 1
 	emit_signal("update_dash_count")
-	print("Dash restored: " + str(Global.dash_count))
+	#print("Dash restored: " + str(Global.dash_count))
 	if Global.dash_count > 0:
 		can_dash = true
 

@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://d3t4u3d1yiva5"]
+[gd_scene load_steps=16 format=3 uid="uid://d3t4u3d1yiva5"]
 
 [ext_resource type="Texture2D" uid="uid://br3e05ggeny84" path="res://textures/Torch Animated.png" id="1_8kptu"]
+[ext_resource type="Script" uid="uid://ct1npvjkhtjxu" path="res://scenes/torch/torch.gd" id="1_k20tr"]
 [ext_resource type="Texture2D" uid="uid://1i5yadab1bkf" path="res://textures/player_light.png" id="2_ano2b"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ano2b"]
@@ -67,7 +68,70 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="Animation" id="Animation_ano2b"]
+resource_name = "flicker"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D/PointLight2D:texture_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.0333333, 1.9666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.0, 0.5, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D/PointLight2D:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.0333333, 1.9666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.0, 3.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_k20tr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D/PointLight2D:texture_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D/PointLight2D:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o7yt1"]
+_data = {
+&"RESET": SubResource("Animation_k20tr"),
+&"flicker": SubResource("Animation_ano2b")
+}
+
 [node name="Torch" type="Node2D"]
+script = ExtResource("1_k20tr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.7, 0.7)
@@ -78,3 +142,8 @@ frame_progress = 0.79972804
 [node name="PointLight2D" type="PointLight2D" parent="AnimatedSprite2D"]
 color = Color(0.7069688, 0.4048619, 0.2211028, 1)
 texture = ExtResource("2_ano2b")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_o7yt1")
+}
