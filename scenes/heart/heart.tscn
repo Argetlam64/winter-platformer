@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://dsg6cwakd8pto"]
+[gd_scene load_steps=13 format=3 uid="uid://dsg6cwakd8pto"]
 
 [ext_resource type="Texture2D" uid="uid://c53qa7wm8sgjn" path="res://textures/heart.png" id="1_3t35b"]
 [ext_resource type="Script" uid="uid://cano0piofn236" path="res://scenes/heart/heart.gd" id="1_jgyhw"]
+[ext_resource type="AudioStream" uid="uid://d4jv71jx0wrij" path="res://sounds/heal.wav" id="3_qhtph"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jgyhw"]
 atlas = ExtResource("1_3t35b")
@@ -113,5 +114,8 @@ shape = SubResource("CircleShape2D_3t35b")
 libraries = {
 &"": SubResource("AnimationLibrary_bkyl7")
 }
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_qhtph")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

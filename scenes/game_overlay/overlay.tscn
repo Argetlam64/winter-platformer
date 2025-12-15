@@ -1,10 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://bf0ba7mx66gt8"]
+[gd_scene load_steps=8 format=3 uid="uid://bf0ba7mx66gt8"]
 
 [ext_resource type="Script" uid="uid://crcvbp3s6hgju" path="res://scenes/game_overlay/overlay.gd" id="1_yf2sk"]
 [ext_resource type="FontFile" uid="uid://cojsua2s34upb" path="res://textures/fonts/Better VCR 9.0.1.ttf" id="2_5f6ye"]
 [ext_resource type="Texture2D" uid="uid://ba77csrlje8ak" path="res://textures/Money one.png" id="3_wlswc"]
 [ext_resource type="Texture2D" uid="uid://d3gocrwfp01fu" path="res://textures/fb202.png" id="4_nit6v"]
 [ext_resource type="Texture2D" uid="uid://b5umaxgkvylhv" path="res://textures/snowflake.png" id="5_k5oma"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k5oma"]
+bg_color = Color(0.91145015, 0, 0.062886186, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6uqk8"]
+bg_color = Color(0.2528629, 0.45691782, 0.7418572, 1)
 
 [node name="GameOverlay" type="Control"]
 layout_mode = 3
@@ -22,8 +28,7 @@ offset_left = 20.0
 offset_top = 20.0
 offset_right = 220.0
 offset_bottom = 50.0
-theme_override_colors/font_color = Color(0.99846405, 0, 0.27655053, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_styles/fill = SubResource("StyleBoxFlat_k5oma")
 show_percentage = false
 
 [node name="WallJumpCounter" type="Label" parent="."]
@@ -104,6 +109,7 @@ offset_top = 30.0
 offset_right = 198.0
 offset_bottom = 57.0
 grow_horizontal = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_6uqk8")
 show_percentage = false
 
 [node name="TextureRect3" type="TextureRect" parent="."]

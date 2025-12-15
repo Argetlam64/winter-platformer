@@ -1,7 +1,8 @@
-[gd_scene load_steps=49 format=3 uid="uid://d1unwglon012"]
+[gd_scene load_steps=50 format=3 uid="uid://d1unwglon012"]
 
 [ext_resource type="Script" uid="uid://lcjdcnuxyegl" path="res://scenes/enemies/skeleton/skeleton.gd" id="1_me6e6"]
 [ext_resource type="Texture2D" uid="uid://clswcph7f1i1i" path="res://textures/enemies/Skeleton Warrior.png" id="1_t4oa3"]
+[ext_resource type="AudioStream" uid="uid://dkqwepareskrv" path="res://sounds/skeleton_damaged.wav" id="3_i3wcf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4umm2"]
 atlas = ExtResource("1_t4oa3")
@@ -381,6 +382,11 @@ one_shot = true
 libraries = {
 &"": SubResource("AnimationLibrary_i3wcf")
 }
+
+[node name="Sounds" type="Node2D" parent="."]
+
+[node name="Damaged" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("3_i3wcf")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
