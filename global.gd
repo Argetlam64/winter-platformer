@@ -2,7 +2,7 @@ extends Node
 
 const max_player_health: int = 6
 const max_wall_jumps: int = 2
-const max_frost: int = 600
+const max_frost: int = 900
 const max_player_light_scale = 10
 const required_wood: int = 100
 const heart_drop_chance: float = 1#0.8
