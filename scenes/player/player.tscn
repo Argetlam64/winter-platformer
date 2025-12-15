@@ -251,6 +251,11 @@ animations = [{
 }, {
 "frames": [],
 "loop": true,
+"name": &"crouch",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
 "name": &"damaged",
 "speed": 5.0
 }, {
@@ -457,7 +462,7 @@ script = ExtResource("1_gmlin")
 
 [node name="SpriteAnimation" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_yj68g")
-animation = &"dash"
+animation = &"crouch"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
