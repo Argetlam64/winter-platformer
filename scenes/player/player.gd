@@ -40,7 +40,7 @@ func _physics_process(delta: float) -> void:
 	if !Global.playing:
 		return 
 	#can't cancel attacking
-	if is_attacking or !alive:
+	if (is_attacking and is_on_floor()) and !alive:
 		return
 	
 	if is_dashing:
@@ -94,6 +94,11 @@ func _physics_process(delta: float) -> void:
 		
 		elif !is_attacking:
 			$SpriteAnimation.play("idle")
+	elif Input.is_action_just_pressed("attack"):
+		$Sounds/Slash.play()
+		$SpriteAnimation.play("jump_attack")
+		$AnimationPlayer.play("attack")
+		is_attacking = true
 
 	move_and_slide()	
 

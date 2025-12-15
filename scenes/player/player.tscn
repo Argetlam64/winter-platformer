@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://cw5l3h3ncruh1"]
+[gd_scene load_steps=80 format=3 uid="uid://cw5l3h3ncruh1"]
 
 [ext_resource type="Texture2D" uid="uid://dx68yssbebvas" path="res://textures/character/Battlemage Fantasy Character/Battlemage Complete (Sprite Sheet)/Idle/Battlemage Idle.png" id="1_dovo2"]
 [ext_resource type="Script" uid="uid://b06eg6hgptrpo" path="res://scenes/player/player.gd" id="1_gmlin"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cfg0o55ufecd8" path="res://textures/character/Battlemage Fantasy Character/Battlemage Complete (Sprite Sheet)/Death/Battlemage Death.png" id="3_0owmy"]
 [ext_resource type="Texture2D" uid="uid://nexv2a8xyj45" path="res://textures/character/Battlemage Fantasy Character/Battlemage Complete (Sprite Sheet)/Dash/Battlemage Dash.png" id="3_5gtgg"]
 [ext_resource type="Texture2D" uid="uid://c6i8v8ndsi5cm" path="res://textures/character/Battlemage Fantasy Character/Battlemage Complete (Sprite Sheet)/Jump Foward/Going Up/Jump Foward Going Up.png" id="4_75vfm"]
+[ext_resource type="Texture2D" uid="uid://qn11fnw66x0o" path="res://textures/character/Battlemage Fantasy Character/Battlemage Complete (Sprite Sheet)/Jump Attack/Jump Foward Attack.png" id="7_myrg7"]
 [ext_resource type="Texture2D" uid="uid://1i5yadab1bkf" path="res://textures/player_light.png" id="8_qek5x"]
 [ext_resource type="AudioStream" uid="uid://bw2qafykq86rh" path="res://sounds/player_damaged.wav" id="10_h17s1"]
 [ext_resource type="AudioStream" uid="uid://bx5keu0ka7o7x" path="res://sounds/background_music.ogg" id="11_je7p5"]
@@ -175,6 +176,26 @@ region = Rect2(0, 288, 56, 48)
 [sub_resource type="AtlasTexture" id="AtlasTexture_je7p5"]
 atlas = ExtResource("1_dovo2")
 region = Rect2(0, 336, 56, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ln3h3"]
+atlas = ExtResource("7_myrg7")
+region = Rect2(0, 0, 56, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uygh0"]
+atlas = ExtResource("7_myrg7")
+region = Rect2(0, 48, 56, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1aof"]
+atlas = ExtResource("7_myrg7")
+region = Rect2(0, 96, 56, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8qe1"]
+atlas = ExtResource("7_myrg7")
+region = Rect2(0, 144, 56, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hdvrm"]
+atlas = ExtResource("7_myrg7")
+region = Rect2(0, 192, 56, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j4nxn"]
 atlas = ExtResource("4_75vfm")
@@ -383,6 +404,26 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_ln3h3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uygh0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t1aof")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w8qe1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hdvrm")
+}],
+"loop": true,
+"name": &"jump_attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_j4nxn")
 }, {
 "duration": 1.0,
@@ -468,7 +509,7 @@ script = ExtResource("1_gmlin")
 
 [node name="SpriteAnimation" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_yj68g")
-animation = &"crouch"
+animation = &"jump_attack"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
