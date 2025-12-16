@@ -521,7 +521,7 @@ shape = SubResource("RectangleShape2D_qek5x")
 zoom = Vector2(2.5, 2.5)
 limit_left = -217
 limit_right = 3100
-position_smoothing_enabled = true
+position_smoothing_enabled = false
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0
